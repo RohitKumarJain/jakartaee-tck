@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -20,4 +20,4 @@ docker build --build-arg http_proxy=http://<host>:<port> \
 --build-arg JDK_BUNDLE_URL=dummy --build-arg CTS_BUNDLE_URL=dummy \
 --build-arg GLASSFISH_BUNDLE_URL=dummy --build-arg JWSDP_BUNDLE=dummy \
 --build-arg JDK_FOR_JWSDP=dummy --build-arg test_suite=samples \
---tag javaeects --rm .
+--tag jakartaeects --rm .

@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -63,8 +63,8 @@
 
 
     <!-- 
-          deploy.all will deploy the web based jacc tests if the (ts.jte) javaee.level
-          property is set to "web".   If the javaee.level property is set to "javaee" 
+          deploy.all will deploy the web based jacc tests if the (ts.jte) jakartaee.level
+          property is set to "web".   If the jakartaee.level property is set to "jakartaee" 
           then the (web based + ejb based) jacc tests will be deployed.  
 
           Note:  the ejb based jacc tests currently (as of GF v4.0) appear to 
@@ -79,7 +79,7 @@
       -->
     <target name="deploy.all" >
         <if>
-          <contains string="${javaee.level}" substring="full"/>
+          <contains string="${jakartaee.level}" substring="full"/>
         <then>
             <echo>*******************************************************</echo>
             <echo>Java EE PROFILE in use, Deploying EJB-based-JACC tests.</echo>

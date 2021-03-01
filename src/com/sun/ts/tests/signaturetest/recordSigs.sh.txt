@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates and others.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates and others.
 # All rights reserved.
 #
 # This program and the accompanying materials are made available under the
@@ -39,7 +39,7 @@
 #   !!! IMPORTANT !!!
 #
 # MUST ENSURE FOLLOWNG ENV VARS ARE SET FOR THIS TO WORK:
-# TS_HOME    - top of your tck  (e.g. /files1/javaeetck)
+# TS_HOME    - top of your tck  (e.g. /files1/jakartaeetck)
 # JAVA_HOME  - java home
 # AS_HOME    - glassfish dir (e.g. /sun/glassfish4/glassfish)
 # ANT_HOME   - Apache Ant installation

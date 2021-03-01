@@ -24,7 +24,7 @@ grant codeBase "file:${com.sun.enterprise.home}/lib/system/-" {
     permission java.security.AllPermission;
 };
 
-grant codeBase "file:${com.sun.enterprise.home}/lib/javaee.jar" {
+grant codeBase "file:${com.sun.enterprise.home}/lib/jakartaee.jar" {
     permission java.security.AllPermission;
 };
 

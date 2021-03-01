@@ -36,7 +36,7 @@
 	     **/jaxm/**/*, **/jaxm1.0.1/**/*,
 	     **/provisioning/**/*,
 	     **/*.runtime.xml,
-	     com/sun/ts/lib/implementation/sun/javaee/SunRI*13*,
+	     com/sun/ts/lib/implementation/sun/jakartaee/SunRI*13*,
 	     com/sun/ts/lib/deliverable/deploy/**,
 	     com/sun/ts/lib/deliverable/jms,
 	     com/sun/ts/lib/deliverable/mgmt/**,
@@ -222,7 +222,7 @@
         <!-- the specific sig test source directories -->
         <copy todir="${deliverable.bundle.dir}/src" includeEmptyDirs="no">
 			<fileset dir="${ts.home}/src"
-				includes="com/sun/ts/tests/signaturetest/javaee/**,
+				includes="com/sun/ts/tests/signaturetest/jakartaee/**,
 				          com/sun/ts/tests/signaturetest/*,
 				          com/sun/ts/tests/signaturetest/signature-repository/*" 
 				excludes="docs/**/*,
@@ -238,7 +238,7 @@
         <!-- the sig test ear files in the dist directory -->
         <copy todir="${deliverable.bundle.dir}/dist" includeEmptyDirs="no">
                         <fileset dir="${ts.home}/dist"
-                                includes="com/sun/ts/tests/signaturetest/javaee/**"
+                                includes="com/sun/ts/tests/signaturetest/jakartaee/**"
                                 excludes="${the.excludes}"/>
         </copy>
 

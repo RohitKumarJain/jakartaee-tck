@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -30,7 +30,7 @@
          our connector names to corresponding cts names.
          (set these props befor importing the common ant files.)
       -->
-    <property name="javaee.home"        value="${connector.home}"/>
+    <property name="jakartaee.home"        value="${connector.home}"/>
     <property name="s1as.domain.dir"    value="${connector.domain.dir}"/>
     <property name="s1as.domain.name"   value="${connector.domain.name}"/>
     <property name="s1as.classpathsuffix"        value="${connector.home.classpathsuffix}"/>

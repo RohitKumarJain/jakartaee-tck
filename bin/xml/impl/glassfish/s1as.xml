@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -33,7 +33,7 @@
     <property name="server.domain"   value="${s1as.domain}"/>
     <property name="server.instance" value="${s1as.server}"/>
     <property name="server.config.dir" 	value="config"/>
-    <property name="server.home"     value="${javaee.home}"/>
+    <property name="server.home"     value="${jakartaee.home}"/>
     <property name="drive"           value="${s1as.applicationRoot}"/>
     <property name="ext.dir.prop"    value="-Djava.ext.dirs="/>
     <property name="start.index"     value="16"/>
@@ -302,10 +302,10 @@
        copy.provider.jar copies the provider jar files to the instance lib directory.
     -->
     <target name="copy.provider.jar">
-        <copy file="${ts.home}/lib/tsprovider.jar" tofile="${javaee.home}/lib/tsprovider.jar" overwrite="yes" />
+        <copy file="${ts.home}/lib/tsprovider.jar" tofile="${jakartaee.home}/lib/tsprovider.jar" overwrite="yes" />
     </target>
     <target name="delete.provider.jar">
-       <delete file="${javaee.home}/lib/tsprovider.jar" quiet="true"/>
+       <delete file="${jakartaee.home}/lib/tsprovider.jar" quiet="true"/>
     </target>
 
     <!--
@@ -377,7 +377,7 @@
     	  we are running against a full EE impl.
     	-->
     	<if>
-    	  <contains string="${javaee.level}" substring="full"/>
+    	  <contains string="${jakartaee.level}" substring="full"/>
     	<then>
          <antcall target="create-jms-user" >
           <param name="jmsServer" value="${jmsServer}"/>
@@ -415,7 +415,7 @@
          </antcall>
          
        <if>  
-         <contains string="${javaee.level}" substring="full"/>
+         <contains string="${jakartaee.level}" substring="full"/>
        <then>
          <antcall target="delete-jms-user" >
           <param name="jmsServer" value="${jmsServer}"/>
@@ -728,7 +728,7 @@
   is down. If we modify the domain.xml disk file while the server is up, the
   server process can overwrite our changes to the domain.xml file. See
   set.ext.dirs target below to see the hack.  We now call these two targets from
-  javaee_vi.xml's config.vi target before the server is started.  Seems to do
+  jakartaee_vi.xml's config.vi target before the server is started.  Seems to do
   the trick.  This code can be reverted once they fix bug ID 7151.  We can go
   back to using the get command.
 
@@ -879,7 +879,7 @@
      -->
      <target name="enable.jms" depends="configPlatform ">
        <if>
-         <contains string="${javaee.level}" substring="full"/>
+         <contains string="${jakartaee.level}" substring="full"/>
        <then>
          <echo message="****server.instance: ${server.instance}"/>
          <if>
@@ -915,7 +915,7 @@
      -->
      <target name="disable.jms" depends="configPlatform">
        <if>
-         <contains string="${javaee.level}" substring="full"/>
+         <contains string="${jakartaee.level}" substring="full"/>
        <then>
          <echo message="****server.instance: ${server.instance}"/>
          <if>
@@ -1198,7 +1198,7 @@
               reportdir="${report.dir}"
               workdir="${work.dir}"
               tshome="${ts.home}"
-              j2eehome="${javaee.home}"
+              j2eehome="${jakartaee.home}"
               testareas="${test.areas}"
               jointimeout="${jointimeout}"
               antopts="${ant.opts}"
@@ -1220,7 +1220,7 @@
        <antcall target="backup.ts.jte.file"/>
        <available file="${bin.dir}/build.xml.original" property="domain.xml.backed"/>
        <antcall target="backup.domain.xml.file"/>
-       <configctsjcov tshome="${ts.home}" j2eehome="${javaee.home}"/>
+       <configctsjcov tshome="${ts.home}" j2eehome="${jakartaee.home}"/>
     </target>
 
     <target name="config.cts.emma">
@@ -1228,7 +1228,7 @@
        <antcall target="backup.ts.jte.file"/>
        <available file="${bin.dir}/build.xml.original" property="domain.xml.backed"/>
        <antcall target="backup.domain.xml.file"/>
-       <configctsemma tshome="${ts.home}" j2eehome="${javaee.home}"/>
+       <configctsemma tshome="${ts.home}" j2eehome="${jakartaee.home}"/>
     </target>
 
     <!--  
@@ -1376,11 +1376,11 @@
      </target>
 
      <target name="undeploy.all.das" if="testingAgainstDAS">
-         <undeployall j2eehome="${javaee.home}" tshome="${ts.home}"/>
+         <undeployall j2eehome="${jakartaee.home}" tshome="${ts.home}"/>
      </target>
 
      <target name="undeploy.all.remote" if="testingAgainstRemoteInstance">
-         <undeployall j2eehome="${javaee.home}"
+         <undeployall j2eehome="${jakartaee.home}"
                       remoteinstance="true"
                       tshome="${ts.home}"/>
      </target>
@@ -1429,7 +1429,7 @@
     <!-- copy jaspic's tssv.jar (Test Suite SPI Verifier) to the instance lib dir  -->
     <target name="copy.tssv.jar">
         <copy file="${ts.home}/lib/tssv.jar" 
-              tofile="${javaee.home}/lib/tssv.jar" overwrite="yes" />
+              tofile="${jakartaee.home}/lib/tssv.jar" overwrite="yes" />
     </target>
 
 
@@ -1449,12 +1449,12 @@
 
 
     <target name="delete.tssv.jar">
-       <delete file="${javaee.home}/lib/tssv.jar" quiet="true"/>
+       <delete file="${jakartaee.home}/lib/tssv.jar" quiet="true"/>
     </target>
 
 
     <target name="delete.tssv.config.files">
-       <delete file="${javaee.home}/lib/tssv.jar" quiet="true"/>
+       <delete file="${jakartaee.home}/lib/tssv.jar" quiet="true"/>
        <delete file="${provider.configuration.file}"   quiet="true"/>
        <delete file="${schema.file.location}/provider-configuration.xsd"  quiet="true"/>
     </target>

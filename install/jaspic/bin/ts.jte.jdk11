@@ -553,8 +553,8 @@ deployment_port.1=${s1as.admin.port}
 #
 # @porting.ts.deploy2.class.1
 # @porting.ts.deploy2.class.2
-# porting.ts.deploy2.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIDeployment2
-# porting.ts.deploy2.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIDeployment2
+# porting.ts.deploy2.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIDeployment2
+# porting.ts.deploy2.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIDeployment2
 
 
 ###############################################################
@@ -574,10 +574,10 @@ deployment_port.1=${s1as.admin.port}
 # @porting.ts.HttpsURLConnection.class.1  VI of
 #    com.sun.ts.lib.porting.TSHttpsURLConnectionInterface
 ###############################################################
-porting.ts.login.class.1=com.sun.ts.lib.implementation.sun.javaee.GlassFishLoginContext
+porting.ts.login.class.1=com.sun.ts.lib.implementation.sun.jakartaee.GlassFishLoginContext
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.jms.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIJMSAdmin
-porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.jms.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIJMSAdmin
+porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 
 ###############################################################
@@ -587,11 +587,11 @@ porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.S
 # Even then, these properties should only be needed to
 # satisfy some requirements for properly lookups.
 ###############################################################
-porting.ts.deploy2.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIDeployment2
-porting.ts.login.class.2=com.sun.ts.lib.implementation.sun.javaee.GlassFishLoginContext
+porting.ts.deploy2.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIDeployment2
+porting.ts.login.class.2=com.sun.ts.lib.implementation.sun.jakartaee.GlassFishLoginContext
 porting.ts.url.class.2=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.jms.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIJMSAdmin
-porting.ts.HttpsURLConnection.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.jms.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIJMSAdmin
+porting.ts.HttpsURLConnection.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 namingServiceHost1=${orb.host}
 namingServicePort1=${orb.port}
 namingServiceHost2=${orb.host}
@@ -757,8 +757,8 @@ $
 #
 #
 ###################################################################
-provider.configuration.file=${javaee.home}/domains/domain1/config/ProviderConfiguration.xml
-schema.file.location=${javaee.home}/lib/schemas
+provider.configuration.file=${jakartaee.home}/domains/domain1/config/ProviderConfiguration.xml
+schema.file.location=${jakartaee.home}/lib/schemas
 logical.hostname.servlet=server
 logical.hostname.soap=localhost
 appclient.log.output=true
@@ -907,13 +907,13 @@ ri.wsimport.jvmargs=
 #     porting.ts.deploy2.class.1 property to a valid impl of
 #     com.sun.ts.lib.porting.TSDeploymentInterface2.  In the case of the RI,
 #     the porting.ts.deploy2.class.2 property would be set to the
-#     RI impl of com.sun.ts.lib.implementation.sun.javaee.SunRIDeployment2.
+#     RI impl of com.sun.ts.lib.implementation.sun.jakartaee.SunRIDeployment2.
 #
 # 2.  Or, you can set this property to deploy/undeploy to/from your impl in
 #     a custom way.  In the case of the RI, it would be set to the following.
 #     This is the default setting for CTS 6.
 #
-#     porting.ts.deploy.class.1=com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeployment
+#     porting.ts.deploy.class.1=com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeployment
 #
 # @porting.ts.deploy.class.2 This property must point to an implementation
 # of com.sun.ts.lib.porting.TSDeploymentInterface.  CTS 5 shipped
@@ -923,11 +923,11 @@ ri.wsimport.jvmargs=
 # value fo this property points to an impl that deploys via copying/deleting
 # to/from the RI autodeploy directory.  This should be left unchanged...
 #
-#     porting.ts.deploy.class.2=com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeployment
+#     porting.ts.deploy.class.2=com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeployment
 #
 ###############################################################
-porting.ts.deploy.class.1=com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeployment
-porting.ts.deploy.class.2=com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeploymentSeparateVM
+porting.ts.deploy.class.1=com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeployment
+porting.ts.deploy.class.2=com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeploymentSeparateVM
 
 
 #classpath used by standard deployment server to deploy to the RI in a separate 
@@ -936,12 +936,12 @@ ts.standard.deployment.server.classpath=${ts.home}/lib/jakarta.xml.bind-api.jar:
 
 ###############################################################################
 # The following properties are aliases for the old J2EE properties.  These
-# properties are now named javaee instead of j2ee and will eventually be phased
+# properties are now named jakartaee instead of j2ee and will eventually be phased
 # out of the CTS.  These props are necessary until the props are renamed 
 # through out all CTS.
 ###############################################################################
 j2ee.home=${jaspic.home}
 j2ee.home.ri=${jaspic.home.ri}
-javaee.home=${jaspic.home}
-javaee.home.ri=${jaspic.home}
+jakartaee.home=${jaspic.home}
+jakartaee.home.ri=${jaspic.home}
 

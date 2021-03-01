@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 #
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 # Copyright (c) 2019, 2020 Payara Foundation and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
@@ -302,7 +302,7 @@ done
 ##### configVI.sh starts here #####
 
 if [[ "$PROFILE" == "web" || "$PROFILE" == "WEB" ]];then
-  KEYWORDS="javaee_web_profile|jacc_web_profile|jaspic_web_profile|javamail_web_profile|connector_web_profile"
+  KEYWORDS="jakartaee_web_profile|jacc_web_profile|jaspic_web_profile|javamail_web_profile|connector_web_profile"
 fi
 
 if [ -z "${vehicle}" ];then
@@ -354,10 +354,10 @@ sed -i 's/^ri.admin.passwd=.*/ri.admin.passwd=adminadmin/g' ts.jte
 sed -i 's/^jdbc.maxpoolsize=.*/jdbc.maxpoolsize=30/g' ts.jte
 sed -i 's/^jdbc.steadypoolsize=.*/jdbc.steadypoolsize=5/g' ts.jte
 
-sed -i "s#^javaee.home=.*#javaee.home=${CTS_HOME}/vi/$GF_VI_TOPLEVEL_DIR/glassfish#g" ts.jte
+sed -i "s#^jakartaee.home=.*#jakartaee.home=${CTS_HOME}/vi/$GF_VI_TOPLEVEL_DIR/glassfish#g" ts.jte
 sed -i 's/^orb.host=.*/orb.host=localhost/g' ts.jte
 
-sed -i "s#^javaee.home.ri=.*#javaee.home.ri=${CTS_HOME}/ri/${GF_RI_TOPLEVEL_DIR}/glassfish#g" ts.jte
+sed -i "s#^jakartaee.home.ri=.*#jakartaee.home.ri=${CTS_HOME}/ri/${GF_RI_TOPLEVEL_DIR}/glassfish#g" ts.jte
 sed -i 's/^orb.host.ri=.*/orb.host.ri=localhost/g' ts.jte
 
 sed -i 's/^ri.admin.port=.*/ri.admin.port=5858/g' ts.jte
@@ -370,7 +370,7 @@ sed -i "s/^wsgen.ant.classname=.*/wsgen.ant.classname=$\{ri.wsgen.ant.classname\
 sed -i "s/^wsimport.ant.classname=.*/wsimport.ant.classname=$\{ri.wsimport.ant.classname\}/g" ts.jte
 
 if [[ "$PROFILE" == "web" || "$PROFILE" == "WEB" ]]; then
-  sed -i "s/^javaee.level=.*/javaee.level=web connector jaxws jaxb javamail javaeedeploy jacc jaspic wsmd/g" ts.jte
+  sed -i "s/^jakartaee.level=.*/jakartaee.level=web connector jaxws jaxb javamail jakartaeedeploy jacc jaspic wsmd/g" ts.jte
 fi
 
 sed -i 's/^impl.deploy.timeout.multiplier=.*/impl.deploy.timeout.multiplier=240/g' ts.jte

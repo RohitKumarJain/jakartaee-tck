@@ -201,19 +201,19 @@ sun.porting_server.port=2002
 ###############################################################
 
 #Porting class names for Vendor J2EE Implementation #1
-porting.ts.deploy.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIDeployment
-porting.ts.login.class.1=com.sun.ts.lib.implementation.sun.javaee.GlassFishLoginContext
+porting.ts.deploy.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIDeployment
+porting.ts.login.class.1=com.sun.ts.lib.implementation.sun.jakartaee.GlassFishLoginContext
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.jms.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIJMSAdmin
-porting.ts.ctsHttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.jms.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIJMSAdmin
+porting.ts.ctsHttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 
 #Porting class names for Sun RI J2EE Implementation #2 (must be Sun's RI)
-porting.ts.deploy.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIDeploymentSeparateVM
-porting.ts.login.class.2=com.sun.ts.lib.implementation.sun.javaee.GlassFishLoginContext
+porting.ts.deploy.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIDeploymentSeparateVM
+porting.ts.login.class.2=com.sun.ts.lib.implementation.sun.jakartaee.GlassFishLoginContext
 porting.ts.url.class.2=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.jms.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIJMSAdmin
-porting.ts.ctsHttpsURLConnection.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.jms.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIJMSAdmin
+porting.ts.ctsHttpsURLConnection.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 #Naming Service hosts and ports for Vendor J2EE Naming Service #1 and 
 #Sun RI J2EE Naming Service #2

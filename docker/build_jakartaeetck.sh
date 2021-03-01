@@ -40,10 +40,10 @@ if [ ! -z "$TCK_BUNDLE_BASE_URL" ]; then
    if [ "$?" == "0" ]; then
      echo "Bundle contains required scripts to run the tests"
    else
-     #renaming folder javaeetck to jakartaeetck in the Oracle Bundle
+     #renaming folder jakartaeetck to jakartaeetck in the Oracle Bundle
      cd ${WORKSPACE}/jakartaeetck-bundles
      unzip -q -o jakartaeetck.zip
-     mv javaeetck jakartaeetck
+     mv jakartaeetck jakartaeetck
      rm -rf jakartaeetck.zip
      zip -r jakartaeetck.zip jakartaeetck
      rm -rf jakartaeetck
@@ -77,8 +77,8 @@ export ANT_OPTS="-Xmx2G -Djava.endorsed.dirs=${JAKARTA_JARS}/endorsed \
                  -Djavax.xml.accessExternalDTD=file,http"
 
 echo ########## Remove hard-coded paths from install/jakartaee/bin/ts.jte ##########"
-sed -e "s#^javaee.home=.*#javaee.home=$JAKARTA_JARS#g" \
-    -e "s#^javaee.home.ri=.*#javaee.home.ri=$JAKARTA_JARS#g" \
+sed -e "s#^jakartaee.home=.*#jakartaee.home=$JAKARTA_JARS#g" \
+    -e "s#^jakartaee.home.ri=.*#jakartaee.home.ri=$JAKARTA_JARS#g" \
     -e "s#^report.dir=.*#report.dir=$BASEDIR/JTReport#g" \
     -e "s#^work.dir=.*#work.dir=$BASEDIR/JTWork#g" $BASEDIR/install/jakartaee/bin/ts.jte > $BASEDIR/install/jakartaee/bin/ts.jte.new
 mv $BASEDIR/install/jakartaee/bin/ts.jte.new $BASEDIR/install/jakartaee/bin/ts.jte

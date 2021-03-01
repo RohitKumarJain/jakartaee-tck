@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -42,10 +42,10 @@ import java.util.*;
  * corresponding JNDI name is provided.</li>
  * </ul>
  * <p>
- * See: javaee.home.ri/lib/dtds/sun-application_5_0-0.dtd
- * javaee.home.ri/lib/dtds/sun-application-client_5_0-0.dtd
- * javaee.home.ri/lib/dtds/sun-ejb-jar_3_0-0.dtd
- * javaee.home.ri/lib/dtds/sun-web-app_2_5-0.dtd for more and updated
+ * See: jakartaee.home.ri/lib/dtds/sun-application_5_0-0.dtd
+ * jakartaee.home.ri/lib/dtds/sun-application-client_5_0-0.dtd
+ * jakartaee.home.ri/lib/dtds/sun-ejb-jar_3_0-0.dtd
+ * jakartaee.home.ri/lib/dtds/sun-web-app_2_5-0.dtd for more and updated
  * information.
  *
  */

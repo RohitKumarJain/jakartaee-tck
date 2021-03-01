@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -79,7 +79,7 @@
   <property name="spec.html.assertion.file"  value="spec-assertions.html"/>
   <property name="srcdirs"  value="appclient,ejb,integration,jacc,jsf,jstl,assembly,
                               ejb30,internal,jaspic,jdbc,jsonb,jta,saaj,concurrency,ejb32,
-                              javaee,jaxrs,jms,jsonp,jws,samples,common,connector,el,javamail,servlet,
+                              jakartaee,jaxrs,jms,jsonp,jws,samples,common,connector,el,javamail,servlet,
                               webservices13,websocket,xa,jaxws,jpa,jsp,securityapi,webservices12"/>
  
   <taskdef resource="net/sf/antcontrib/antlib.xml"
@@ -312,7 +312,7 @@
   <!-- tests are no more part of Java EE 8 CTS                                  -->
   <target name="all" depends="start.log,
 	                              jta,jdbc,ejb,connector,jaspic,
-	                              jsp,el,servlet,jms,jacc,javaee,jstl,jpa,
+	                              jsp,el,servlet,jms,jacc,jakartaee,jstl,jpa,
 	                              jaxrs,webservices,jsf,jsonp,
                                   jsonb,concurrency,websocket,securityapi">
     <antcall target="generate.exec.summary"/>
@@ -359,13 +359,13 @@
     </antcall>
   </target>
 
-  <target name="javaee">
+  <target name="jakartaee">
     <for param="srcdir" list="${srcdirs}"
                           trim="true" delimiter=",">
       <sequential>
         <antcall target="calculate.coverage">
-          <param name="spec.coverage.dir" value="${coverage.base.dir}/javaee_8/spec"/>
-          <param name="spec.assertions"   value="${ts.docs.dir}/javaee/JavaEESpecAssertions.xml"/> 
+          <param name="spec.coverage.dir" value="${coverage.base.dir}/jakartaee_8/spec"/>
+          <param name="spec.assertions"   value="${ts.docs.dir}/jakartaee/JavaEESpecAssertions.xml"/> 
           <param name="test.src.dir"      value="/@{srcdir}"/>
           <param name="filter.string"     value="JavaEE"/>
         </antcall>

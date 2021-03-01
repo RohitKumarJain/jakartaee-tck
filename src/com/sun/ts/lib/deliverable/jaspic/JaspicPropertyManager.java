@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -149,7 +149,7 @@ public class JaspicPropertyManager extends AbstractPropertyManager {
     pTestProps.put("wsdlRepository1", getProperty("wsdlRepository1"));
     pTestProps.put("wsdlRepository2", getProperty("wsdlRepository2"));
 
-    pTestProps.put("javaee.level", getProperty("javaee.level", "component"));
+    pTestProps.put("jakartaee.level", getProperty("jakartaee.level", "component"));
 
     return pTestProps;
   }

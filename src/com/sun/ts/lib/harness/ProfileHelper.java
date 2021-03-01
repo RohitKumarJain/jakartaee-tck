@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2008, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -34,7 +34,7 @@ public final class ProfileHelper {
       e.printStackTrace();
     }
 
-    String javaeeLevel = jteMgr.getProperty("javaee.level", "full");
+    String jakartaeeLevel = jteMgr.getProperty("jakartaee.level", "full");
     ArrayList<String> sFilteredAppJarsArray = new ArrayList<String>();
     boolean bEarPresent = false;
 
@@ -54,7 +54,7 @@ public final class ProfileHelper {
       // first, see if we have any ears
       bEarPresent = isEarPresent(sAppJarsArray);
 
-      if (javaeeLevel.contains("full")) {
+      if (jakartaeeLevel.contains("full")) {
         if (bEarPresent) {
           for (int ii = 0; ii < sAppJarsArray.length; ii++) {
             String name = sAppJarsArray[ii];

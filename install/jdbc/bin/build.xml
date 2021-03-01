@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -242,26 +242,26 @@
   </target>
 
   <target name="start.sunri.porting.server" depends="init">
-    <java classname="com.sun.ts.lib.implementation.sun.javaee.SunRIPortingServer" fork="yes" failonerror="yes" 
+    <java classname="com.sun.ts.lib.implementation.sun.jakartaee.SunRIPortingServer" fork="yes" failonerror="yes" 
       classpath="${ts.classpath}">
       <sysproperty key="java.security.policy" value="${bin.dir}/harness.policy"/>
       <sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host.ri}"/>
       <sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port.ri}"/>
       <sysproperty key="java.endorsed.dirs" value="${java.endorsed.dirs}" />
-      <sysproperty key="com.sun.enterprise.home" value="${javaee.home.ri}"/>
+      <sysproperty key="com.sun.enterprise.home" value="${jakartaee.home.ri}"/>
       <sysproperty key="cts.harness.debug" value="${cts.harness.debug}"/>
       <sysproperty key="deliverable.class" value="${deliverable.class}" />
     </java>
   </target>
 
   <target name="start.sunri.porting.server13" depends="init">
-    <java classname="com.sun.ts.lib.implementation.sun.javaee.SunRIPortingServer13" fork="yes" failonerror="yes" 
+    <java classname="com.sun.ts.lib.implementation.sun.jakartaee.SunRIPortingServer13" fork="yes" failonerror="yes" 
       classpath="${ts.classpath}">
       <sysproperty key="java.security.policy" value="${bin.dir}/harness.policy"/>
       <sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host.ri}"/>
       <sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port.ri}"/>
       <sysproperty key="java.endorsed.dirs" value="${java.endorsed.dirs}" />
-      <sysproperty key="com.sun.enterprise.home" value="${javaee.home.ri}"/>
+      <sysproperty key="com.sun.enterprise.home" value="${jakartaee.home.ri}"/>
       <sysproperty key="cts.harness.debug" value="${cts.harness.debug}"/>
       <sysproperty key="deliverable.class" value="${deliverable.class}" />
     </java>

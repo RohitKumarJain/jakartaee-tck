@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -312,12 +312,12 @@ ws_wait=5
 #################################################################
 # To Configure config.vi with security manager
 #################################################################
-javaee.home=${web.home}
+jakartaee.home=${web.home}
 ###############################################################
 ## Config params needed for Sun Java System Application Server
 ## (SJSAS) asadmin. You must change these values as needed
 ## only if you are testing against SJSAS app server
-## (javaee.home is pointing to SJSAS).
+## (jakartaee.home is pointing to SJSAS).
 #
 # @s1as.admin.user     -- The SJSAS asadmin user id
 # @s1as.admin.passwd   -- The SJSAS asadmin user password
@@ -345,8 +345,8 @@ javaee.home=${web.home}
 #                         to be set when using DB2 else it
 #                         should be empty.
 ############################################################### 
-s1as.admin=${javaee.home}/bin/asadmin
-s1as.domain.dir=${javaee.home}/domains
+s1as.admin=${jakartaee.home}/bin/asadmin
+s1as.domain.dir=${jakartaee.home}/domains
 s1as.domain.name=domain1
 s1as.domain=${s1as.domain.dir}/${s1as.domain.name}
 s1as.admin.host=${glassfish.admin.host}

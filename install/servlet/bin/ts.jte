@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2009, 2020 Oracle and/or its affiliates and others.
+# Copyright (c) 2009, 2021 Oracle and/or its affiliates and others.
 # All rights reserved.
 #
 # This program and the accompanying materials are made available under the
@@ -90,7 +90,7 @@ web.home=
 #
 ## (SJSAS) asadmin. You must change these values as needed
 ## only if you are testing against SJSAS app server
-## (javaee.home is pointing to SJSAS).
+## (jakartaee.home is pointing to SJSAS).
 #
 # @s1as.admin.user     -- The SJSAS asadmin user id
 # @s1as.admin.passwd   -- The SJSAS asadmin user password
@@ -103,16 +103,16 @@ web.home=
 # @s1as.domain         -- The SJSAS domain path being used
 # @s1as.asenv.loc      -- location of asenv.conf or asenv.bat
 #########################################################################
-javaee.home=${web.home}
+jakartaee.home=${web.home}
 s1as.admin.user=admin
 s1as.admin.passwd=
 s1as.admin.host=${webServerHost}
 s1as.admin.port=4848
-s1as.admin=${javaee.home}/bin/asadmin
+s1as.admin=${jakartaee.home}/bin/asadmin
 s1as.domain.dir=${web.home}/domains
 s1as.domain.name=domain1
 s1as.domain=${web.home}/domains/domain1
-s1as.asenv.loc=${javaee.home}/config
+s1as.asenv.loc=${jakartaee.home}/config
 
 ###############################################################
 # @tz - your local timezone. For valid values, consult your
@@ -250,7 +250,7 @@ impl.vi.deploy.dir=${web.home}/domains/domain1/autodeploy
 #    com.sun.ts.lib.porting.TSHttpsURLConnectionInterface 
 ###############################################################
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 ##############################################################
 # @certLoginUserAlias  User alias for certificate based login.

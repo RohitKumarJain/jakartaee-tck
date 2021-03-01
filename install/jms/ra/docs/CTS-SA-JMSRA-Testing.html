@@ -3,7 +3,7 @@
 <head>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -84,13 +84,13 @@ h4 {  font-style: italic; color: #000099}
       <p>For example, you would set the following if running on Solaris or Linux:</p>
       <pre>% <strong>setenv JAVA_HOME /java8</strong>
 % <strong>setenv JAVAEE_HOME /glassfish6/glassfish</strong>
-% <strong>setenv TS_HOME /javaeetck</strong>
+% <strong>setenv TS_HOME /jakartaeetck</strong>
 % <strong>setenv ANT_HOME /anthome</strong>
       </pre>
       <p>Or, if you are running on Windows you would set the following:</p>
       <pre>c:\&gt; <strong>set JAVA_HOME=C:\java</strong>
 c:\&gt; <strong>set JAVAEE_HOME=C:\glassfish6\glassfish</strong>
-c:\&gt; <strong>set TS_HOME=C:\javaeetck</strong>
+c:\&gt; <strong>set TS_HOME=C:\jakartaeetck</strong>
 c:\&gt; <strong>set ANT_HOME=C:\apacheant</strong>
       </pre>
      <p>Update your <code>PATH</code> environment variable to include the following paths (Unix Example):</p>
@@ -109,7 +109,7 @@ Jakarta Messaging Resource Adapter using the Jakarta EE 8 CI, Eclipse GlassFish 
    <li>
       <p class="step">Set the following in your ts.jte file</p>
       <ol type="A">
-         <li><code>javaee.home</code> set this property to location where Jakarta EE 8 CI is installed</li>
+         <li><code>jakartaee.home</code> set this property to location where Jakarta EE 8 CI is installed</li>
          <li><code>orb.host</code> use default value or enter a new host name</li>
          <li><code>orb.port</code> use default value or enter a new port number</li>
          <li><code>test.sa.jmsra</code> set this property to true</li>
@@ -120,7 +120,7 @@ Jakarta Messaging Resource Adapter using the Jakarta EE 8 CI, Eclipse GlassFish 
       <p>Verify rest of <strong><code>ts.jte</code></strong> settings by consulting the CTS 8 Users Guide.</p>
       <p>Example settings if running on Solaris or Linux:</p>
 <pre>
-<strong>javaee.home=/glassfish6/glassfish</strong>
+<strong>jakartaee.home=/glassfish6/glassfish</strong>
 <strong>orb.host=localhost</strong>
 <strong>orb.port=3699</strong>
 <strong>test.sa.jmsra=true</strong>
@@ -129,7 +129,7 @@ Jakarta Messaging Resource Adapter using the Jakarta EE 8 CI, Eclipse GlassFish 
 <strong>jmsra.name=myjmsra</strong></pre>
     <p>Example settings if running on Windows:</p>
 <pre>
-<strong>javaee.home=c:/glassfish6/glassfish</strong>
+<strong>jakartaee.home=c:/glassfish6/glassfish</strong>
 <strong>orb.host=localhost</strong>
 <strong>orb.port=3699</strong>
 <strong>test.sa.jmsra=true</strong>
@@ -236,7 +236,7 @@ c:\&gt; <strong>ant -f xml\impl\glassfish\jmsra.xml restore-jmsmdbejbxml</strong
    <li>
       <p class="step">Set the following in your ts.jte file</p>
       <ol type="A">
-         <li><code>javaee.home</code> set this property to location where Jakarta EE 8 CI is installed</li>
+         <li><code>jakartaee.home</code> set this property to location where Jakarta EE 8 CI is installed</li>
          <li><code>orb.host</code> use default value or enter a new host name</li>
          <li><code>orb.port</code> use default value or enter a new port number</li>
          <li><code>test.sa.jmsra</code> set this property back to false</li>
@@ -247,7 +247,7 @@ c:\&gt; <strong>ant -f xml\impl\glassfish\jmsra.xml restore-jmsmdbejbxml</strong
       <p>Verify the rest of your <strong><code>ts.jte</code></strong> settings by consulting the CTS 8 Users Guide.</p>
       <p>Example settings if running on Solaris or Linux:</p>
 <pre>
-<strong>javaee.home=/glassfish6/glassfish</strong>
+<strong>jakartaee.home=/glassfish6/glassfish</strong>
 <strong>orb.host=localhost</strong>
 <strong>orb.port=3699</strong>
 <strong>test.sa.jmsra=false</strong>
@@ -256,7 +256,7 @@ c:\&gt; <strong>ant -f xml\impl\glassfish\jmsra.xml restore-jmsmdbejbxml</strong
 <strong>jmsra.name=jmsra</strong></pre>
     <p>Example settings if running on Windows:</p>
 <pre>
-<strong>javaee.home=c:/glassfish6/glassfish</strong>
+<strong>jakartaee.home=c:/glassfish6/glassfish</strong>
 <strong>orb.host=localhost</strong>
 <strong>orb.port=3699</strong>
 <strong>test.sa.jmsra=false</strong>

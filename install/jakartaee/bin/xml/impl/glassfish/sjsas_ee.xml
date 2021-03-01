@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -35,7 +35,7 @@
     <property name="server.domain.name"	value="${s1as.domain.name}"/>
     <property name="server.instance"    value="${sjsas.nodeinstance.name}"/>
     <property name="server.config.dir" 	value="config"/>
-    <property name="server.home"        value="${javaee.home}"/>
+    <property name="server.home"        value="${jakartaee.home}"/>
     <property name="drive"              value="${s1as.applicationRoot}"/>
     <property name="default.ext.dirs"   value="$$\{com.sun.aas.javaRoot\}/jre/lib/ext$$\{path.separator\}$$\{com.sun.aas.instanceRoot\}/config/$$\{com.sun.aas.configName\}/lib/ext$$\{path.separator\}$$\{com.sun.aas.instanceRoot\}/lib/ext$$\{path.separator\}$$\{com.sun.aas.installRoot\}/lib/jdbcdrivers$$\{path.separator\}$$\{com.sun.aas.installRoot\}/javadb/lib/"/>
 
@@ -51,7 +51,7 @@
     -->
     <property name="internalTimer.poolName" value="cts-internal-timer-pool"/>
     <property name="internalTimer.jndiName" value="jdbc/InternalTimer"/>
-    <property name="embeddedTimer.url" value="jdbc:derby:${javaee.home}${file.separator}javadb${file.separator}databases${file.separator}cts;create=true"/>
+    <property name="embeddedTimer.url" value="jdbc:derby:${jakartaee.home}${file.separator}javadb${file.separator}databases${file.separator}cts;create=true"/>
  
     <target name="usage">
         <echo message="The following ant targets are available to configure SJSAS SE/PE for CTS:"/>
@@ -205,7 +205,7 @@
          <antcall target="create-jdbc-connection-pool" >
           <param name="restype" value="javax.sql.XADataSource"/>
           <param name="datasourceclassname" value="org.apache.derby.jdbc.EmbeddedXADataSource"/>
-          <param name="pool.properties" value="databaseName=${javaee.home}${file.separator}javadb${file.separator}databases${file.separator}cts"/>
+          <param name="pool.properties" value="databaseName=${jakartaee.home}${file.separator}javadb${file.separator}databases${file.separator}cts"/>
           <param name="poolName" value="${internalTimer.poolName}"/>
          </antcall>
 
@@ -229,7 +229,7 @@
              delimiter=";"
              autocommit="true"
              onerror="continue" >
-             <transaction src="${javaee.home}/lib/install/databases/ejbtimer_derby.sql"/>
+             <transaction src="${jakartaee.home}/lib/install/databases/ejbtimer_derby.sql"/>
         </sql>
 
      </target>

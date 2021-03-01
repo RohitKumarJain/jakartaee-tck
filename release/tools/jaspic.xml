@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -117,7 +117,7 @@
                      com/sun/ts/lib/deliverable/cts/deploy/*.class,
                      com/sun/ts/lib/deliverable/jaspic/*.class,
                      com/sun/ts/lib/implementation/sun/common/glassfish/*.class,
-                     com/sun/ts/lib/implementation/sun/javaee/**/*.class,
+                     com/sun/ts/lib/implementation/sun/jakartaee/**/*.class,
                      com/sun/ts/tests/signaturetest/*.class,
                      com/sun/ts/tests/signaturetest/jaspic/**/*"
 
@@ -177,7 +177,7 @@
                          com/sun/ts/lib/deliverable/cts/deploy/**/*,
                          com/sun/ts/lib/porting/**/*,
                          com/sun/ts/lib/deliverable/jaspic/*, 
-                         com/sun/ts/lib/implementation/javaee/**/*, 
+                         com/sun/ts/lib/implementation/jakartaee/**/*, 
                          com/sun/ts/tests/build.xml,
                          com/sun/ts/tests/signaturetest/*,
                          com/sun/ts/tests/signaturetest/jaspic/**/*,
@@ -205,10 +205,10 @@
         <copy file="${ts.home}/src/com/sun/ts/lib/implementation/sun/common/SunRIURL.java" 
               todir="${deliverable.bundle.dir}/src/com/sun/ts/lib/implementation/sun/common"/>
         
-        <!-- the com/sun/ts/lib/implementation/sun/javaee/runtime dir -->
-        <copy todir="${deliverable.bundle.dir}/src/com/sun/ts/lib/implementation/sun/javaee/runtime" 
+        <!-- the com/sun/ts/lib/implementation/sun/jakartaee/runtime dir -->
+        <copy todir="${deliverable.bundle.dir}/src/com/sun/ts/lib/implementation/sun/jakartaee/runtime" 
               includeEmptyDirs="no">
-            <fileset dir="${ts.home}/src/com/sun/ts/lib/implementation/sun/javaee/runtime" 
+            <fileset dir="${ts.home}/src/com/sun/ts/lib/implementation/sun/jakartaee/runtime" 
                      includes="**/**"/>
         </copy>
 

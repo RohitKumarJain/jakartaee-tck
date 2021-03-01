@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -78,7 +78,7 @@ sed -i 's#webServerPort=.*#webServerPort=8080#g' ts.jte
 sed -i 's#impl\.vi\.deploy\.dir=.*#impl.vi.deploy.dir=${web.home}/domains/domain1/autodeploy#g' ts.jte
 
 if [[ "$PROFILE" == "web" || "$PROFILE" == "WEB" ]]; then
-  echo "javaee.level=web"  >> ts.jte
+  echo "jakartaee.level=web"  >> ts.jte
 fi
 
 mkdir -p $TCK_HOME/${TCK_NAME}report/${TCK_NAME}

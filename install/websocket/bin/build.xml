@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -39,7 +39,7 @@
 
 
     <target name="deploy.all" description="Deploy all archives.">
-        <echo message="javaee.level: ${javaee.level}" />
+        <echo message="jakartaee.level: ${jakartaee.level}" />
         <property name="pkg.dir" value="com/sun/ts/tests/websocket"/>
         <ant antfile="build.xml" dir="${ts.home}/src/com/sun/ts/tests/websocket" target="deploy"/>
     </target>
@@ -59,13 +59,13 @@
                 includes="${lib.pkg.dir}/deliverable/tck/**,
                   ${lib.pkg.dir}/porting/**/*.java,
                   ${lib.pkg.dir}/implementation/sun/common/**,
-                  ${lib.pkg.dir}/implementation/sun/javaee/SunRIHttpsURLConnection.java,
+                  ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIHttpsURLConnection.java,
                   ${provider.dir}/**,
                    com/sun/ts/tests/common/vehicle/VehicleClient.java,
                   com/sun/ts/tests/common/vehicle/VehicleRunnerFactory.java,
                   com/sun/ts/tests/common/vehicle/EmptyVehicleRunner.java,
                   com/sun/ts/tests/common/vehicle/VehicleRunnable.java"
-                excludes="${lib.pkg.dir}/implementation/sun/javaee/SunRIDeploy**,
+                excludes="${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeploy**,
                   ${lib.pkg.dir}/porting/TSJMS*.java,
                   ${lib.pkg.dir}/porting/TSDeployment*.java"
         >

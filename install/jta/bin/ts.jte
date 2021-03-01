@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2008, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2008, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -197,7 +197,7 @@ harness.socket.retry.count=10
 ####################################################################
 # Implementation Property Settings for Vendor and RI.  These properties
 # are used when either porting.ts.deploy.class.1 or porting.ts.deploy.class.2
-# are set to com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeployment.
+# are set to com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeployment.
 # Note:  They are are also used when using the "ant deploy" and "ant undeploy"
 # targets outside of running tests.
 #

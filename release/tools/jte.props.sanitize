@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -20,12 +20,12 @@
 
 find_1    = ${line.separator}orb.host=
 replace_1 = ${line.separator}orb.host=
-find_2    = ${line.separator}javaee.home=
-replace_2 = ${line.separator}javaee.home=
+find_2    = ${line.separator}jakartaee.home=
+replace_2 = ${line.separator}jakartaee.home=
 find_3    = ${line.separator}orb.host.ri=
 replace_3 = ${line.separator}orb.host.ri=
-find_4    = ${line.separator}javaee.home.ri=
-replace_4 = ${line.separator}javaee.home.ri=
+find_4    = ${line.separator}jakartaee.home.ri=
+replace_4 = ${line.separator}jakartaee.home.ri=
 find_5    = ${line.separator}mailuser1=
 replace_5 = ${line.separator}mailuser1=
 find_6    = ${line.separator}mailHost=

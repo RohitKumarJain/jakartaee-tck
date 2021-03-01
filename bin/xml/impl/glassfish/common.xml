@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -20,7 +20,7 @@
 <project name="Commonxml" basedir=".">
 
     <!-- ========================================================== -->
-    <!--  CTS s1as.xml & javaee_ri.xml Common Properties & targets  -->
+    <!--  CTS s1as.xml & jakartaee_ri.xml Common Properties & targets  -->
     <!-- ========================================================== -->
 
     <!-- IMPORTS -->
@@ -154,11 +154,11 @@
 	  <equals arg1="${sjsas.env.type}" arg2="das" casesensitive="true" trim="true"/>
 	</condition>
 
-	<condition property="NSSConfigDir" value="${javaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/config">
+	<condition property="NSSConfigDir" value="${jakartaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/config">
 	  <equals arg1="${sjsas.env.type}" arg2="remote" casesensitive="true" trim="true"/>
 	</condition>
 
-	<condition property="NSSConfigDir" value="${javaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/config">
+	<condition property="NSSConfigDir" value="${jakartaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/config">
 	  <equals arg1="${sjsas.env.type}" arg2="cluster" casesensitive="true" trim="true"/>
 	</condition>
 
@@ -1306,24 +1306,24 @@
        
      <echo message="Coping sun-acc.xml.template to the appserver config directory" />
      
-     <copy file="${javaee.home}/lib/install/templates/${sun-acc.xml.template}" 
-             tofile="${javaee.home}/lib/install/templates/${sun-acc.xml.template.orig}" overwrite="yes">
+     <copy file="${jakartaee.home}/lib/install/templates/${sun-acc.xml.template}" 
+             tofile="${jakartaee.home}/lib/install/templates/${sun-acc.xml.template.orig}" overwrite="yes">
      </copy>
      
      <echo message="Coping wss-client-config.xml to the appserver lib directory" />
      
-     <copy file="${javaee.home}/lib/appclient/wss-client-config.xml" 
-             tofile="${javaee.home}/lib/appclient/wss-client-config.xml.orig" overwrite="yes">
+     <copy file="${jakartaee.home}/lib/appclient/wss-client-config.xml" 
+             tofile="${jakartaee.home}/lib/appclient/wss-client-config.xml.orig" overwrite="yes">
      </copy>
      
      <copy file="${ts.home}/src/com/sun/ts/tests/jaspic/ejb/xms/wss-client-config.xml" 
-             tofile="${javaee.home}/lib/appclient/wss-client-config.xml" overwrite="yes">
+             tofile="${jakartaee.home}/lib/appclient/wss-client-config.xml" overwrite="yes">
      </copy>
 
      <copy file="${ts.home}/src/com/sun/ts/tests/jaspic/ejb/xms/${sun-acc.xml.template}" 
-             tofile="${javaee.home}/lib/install/templates/${sun-acc.xml.template}" overwrite="yes">
+             tofile="${jakartaee.home}/lib/install/templates/${sun-acc.xml.template}" overwrite="yes">
         <filterset begintoken="%%%" endtoken="%%%">
-        <filter token="INSTALL_ROOT" value="${javaee.home}" />
+        <filter token="INSTALL_ROOT" value="${jakartaee.home}" />
         <filter token="SERVER_NAME" value="${s1as.admin.host}" />
         <filter token="ORB_LISTENER_PORT" value="${orb.port.ri}" />
      </filterset>
@@ -1373,14 +1373,14 @@
     
     <echo message="Reverting to default sun-acc.xml" />
     
-    <copy file="${javaee.home}/lib/install/templates/${sun-acc.xml.template.orig}" 
-             tofile="${javaee.home}/lib/install/templates/${sun-acc.xml.template}" overwrite="yes">
+    <copy file="${jakartaee.home}/lib/install/templates/${sun-acc.xml.template.orig}" 
+             tofile="${jakartaee.home}/lib/install/templates/${sun-acc.xml.template}" overwrite="yes">
      </copy>
      
      <echo message="Coping wss-client-config.xml to the appserver lib directory" />
      
-     <copy file="${javaee.home}/lib/appclient/wss-client-config.xml.orig" 
-             tofile="${javaee.home}/lib/appclient/wss-client-config.xml" overwrite="yes">
+     <copy file="${jakartaee.home}/lib/appclient/wss-client-config.xml.orig" 
+             tofile="${jakartaee.home}/lib/appclient/wss-client-config.xml" overwrite="yes">
      </copy>
 
       <!-- Restart server -->
@@ -1593,7 +1593,7 @@ AS_ADMIN_NEWPASSWORD=${admin.password}</echo>
 	  
 	  If/when this target is called from config.ri, remove the
 	  filter.password.file dependency since this happens prior to this target
-	  being invoked (in javaee_ri.xml=>config.ri).
+	  being invoked (in jakartaee_ri.xml=>config.ri).
 	  
 	  This is not a local command so the domain must be running to execute
 	  this command.  The admin password will also have to be set to a non-empty
@@ -1603,7 +1603,7 @@ AS_ADMIN_NEWPASSWORD=${admin.password}</echo>
 	  config.ri since all these issues are handled there.
 	  
 	  To invoke stand-alone (until it is added to config.ri):
-	    ant -f TS_HOME/install/jakartaee/bin/xml/impl/glassfish/javaee_ri.xml \
+	    ant -f TS_HOME/install/jakartaee/bin/xml/impl/glassfish/jakartaee_ri.xml \
 	        enable.secure.admin
 	-->
 	<target name="enable.secure.admin" depends="filter.password.file, configPlatform">

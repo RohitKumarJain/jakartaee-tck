@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -86,7 +86,7 @@ sed -i "s#^report.dir=.*#report.dir=$TCK_HOME/${TCK_NAME}report/${TCK_NAME}#g" t
 sed -i "s#^work.dir=.*#work.dir=$TCK_HOME/${TCK_NAME}work/${TCK_NAME}#g" ts.jte
 
 if [[ "$PROFILE" == "web" || "$PROFILE" == "WEB" ]]; then
-  echo "javaee.level=web"  >> ts.jte
+  echo "jakartaee.level=web"  >> ts.jte
 fi
 
 mkdir -p $TCK_HOME/${TCK_NAME}report/${TCK_NAME}

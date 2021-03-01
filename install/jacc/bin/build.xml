@@ -60,7 +60,7 @@
                      com/sun/ts/tests/signaturetests/connector/**/*.java,
                      com/sun/ts/tests/signaturetests/el/**/*.java,
                      com/sun/ts/tests/signaturetests/jaspic/**/*.java,
-                     com/sun/ts/tests/signaturetests/javaee/**/*.java,
+                     com/sun/ts/tests/signaturetests/jakartaee/**/*.java,
                      com/sun/ts/tests/signaturetests/jaxm/**/*.java,
                      com/sun/ts/tests/signaturetests/jaxws/**/*.java,
                      com/sun/ts/tests/signaturetests/jms/**/*.java,
@@ -97,7 +97,7 @@
                 <include name="${lib.pkg.dir}/deliverable/jacc/**" />
                 <include name="${lib.pkg.dir}/deliverable/tck/*.class"/>
                 <include name="${lib.pkg.dir}/implementation/sun/common/**" />
-                <include name="${lib.pkg.dir}/implementation/sun/javaee/**" />
+                <include name="${lib.pkg.dir}/implementation/sun/jakartaee/**" />
                 <include name="${provider.dir}/"/>
             </fileset>
         </delete>
@@ -108,7 +108,7 @@
         <ts.javac includes="${lib.pkg.dir}/deliverable/tck/*.java,
                             ${lib.pkg.dir}/deliverable/jacc/**,
                             ${provider.dir}/**,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIHttpsURLConnection.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIHttpsURLConnection.java,
                             ${lib.pkg.dir}/implementation/sun/common/SunRIURL.java">
             <classpath>
                 <pathelement path="${ts.lib.classpath}" />
@@ -122,7 +122,7 @@
         <ts.lib.jar>
             <include name="${lib.pkg.dir}/deliverable/tck/*.class"/>
             <include name="${lib.pkg.dir}/deliverable/jacc/*"/>
-            <include name="${lib.pkg.dir}/implementation/sun/javaee/SunRIHttpsURLConnection.class"/>
+            <include name="${lib.pkg.dir}/implementation/sun/jakartaee/SunRIHttpsURLConnection.class"/>
             <include name="${lib.pkg.dir}/implementation/sun/common/SunRIURL.class"/>
         </ts.lib.jar>
         <echo message="The TCK specific library jar, 'jacctck.jar', has been built."/>

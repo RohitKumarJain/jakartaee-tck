@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -40,7 +40,7 @@
 # cd to: $TS_HOME/src/com/sun/ts/tests/signaturetest
 #
 # run: $ANT_HOME/bin/ant -f record-build.xml \
-#   -Dsig.source=JAVAEE_HOME/lib/javaee.jar \
+#   -Dsig.source=JAVAEE_HOME/lib/jakartaee.jar \
 #   -Dmap.file=$TS_HOME/bin/sig-test.map record.sig.batch
 #
 ###############################################################

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -757,7 +757,7 @@ public class ProviderConfigurationXMLFileProcessor {
         }
 
         if (systemId.contains("provider-configuration.xsd")) {
-          // location of schema is at <javaee.home.ri>/lib/schemas(from ts.jte)
+          // location of schema is at <jakartaee.home.ri>/lib/schemas(from ts.jte)
           String schemaLocation = System.getProperty("schema.file.location");
           return new InputSource(
               schemaLocation + File.separator + "provider-configuration.xsd");

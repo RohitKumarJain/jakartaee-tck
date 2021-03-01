@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -26,7 +26,7 @@
                   com/sun/ts/tests/jaxp,
                   com/sun/ts/tests/jacc,
                   com/sun/ts/tests/jaspic,
-                  com/sun/ts/tests/signaturetest/javaee,
+                  com/sun/ts/tests/signaturetest/jakartaee,
                   com/sun/ts/tests/integration,
                   com/sun/ts/tests/el,
                   com/sun/ts/tests/ejb,
@@ -38,7 +38,7 @@
                   com/sun/ts/tests/xa,
                   com/sun/ts/tests/jaxrs,
                   com/sun/ts/tests/servlet,
-                  com/sun/ts/tests/javaee,
+                  com/sun/ts/tests/jakartaee,
                   com/sun/ts/tests/jsf,
                   com/sun/ts/tests/jsp,
                   com/sun/ts/tests/jstl,
@@ -130,8 +130,8 @@
 	</target>
 
 	<target name="translatepath">
-		<translatepath propname="javaee.home.ri"/>
-		<translatepath propname="javaee.home"/>
+		<translatepath propname="jakartaee.home.ri"/>
+		<translatepath propname="jakartaee.home"/>
 		<translatepath propname="s1as.java.endorsed.dirs"/>
 		<translatepath propname="ri.java.endorsed.dirs"/>
 	</target>
@@ -140,7 +140,7 @@
     check.java.options, no.java.options, translatepath">
 
 		<!-- create the needed sun-acc.xml for the RI appclient -->
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.cts"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.cts"/>
 
 		<ts.javatest.batch/>
 	</target>
@@ -149,46 +149,46 @@
     check.java.options, no.java.options, translatepath">
 
 		<!-- create the needed sun-acc.xml for the RI appclient -->
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.cts"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.cts"/>
 		<ts.javatest.batch/>
 	</target>
 
 	<target name="gui" depends="init, check.java.options, no.java.options, translatepath">
 
 		<!-- create the needed sun-acc.xml for the RI appclient -->
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.cts"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.cts"/>
 		<javatest.gui/>
 	</target>
 
 	<target name="start.auto.deployment.server" depends="init">
-		<java classname="com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeploymentServer"
+		<java classname="com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeploymentServer"
               fork="yes"
               classpath="${ts.standard.deployment.server.classpath}">
 			<sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host.ri}"/>
 			<sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port.ri}"/>
-			<sysproperty key="com.sun.enterprise.home" value="${javaee.home.ri}"/>
+			<sysproperty key="com.sun.enterprise.home" value="${jakartaee.home.ri}"/>
 			<sysproperty key="deliverable.class" value="${deliverable.class}" />
 			<sysproperty key="java.compiler" value="NONE"/>
 			<sysproperty key="TS_HOME" value="${ts.home}" />
 			<sysproperty key="ts.home" value="${ts.home}" />
 			<sysproperty key="pathsep" value="${pathsep}" />
-			<sysproperty key="J2EE_HOME" value="${javaee.home}" />
+			<sysproperty key="J2EE_HOME" value="${jakartaee.home}" />
 			<sysproperty key="JAVA_HOME" value="${java.home}"  />
 			<sysproperty key="java.security.policy" value="${bin.dir}/harness.policy" />
 			<sysproperty key="windir" value="${env.windir}" />
 			<sysproperty key="SYSTEMROOT" value="${env.SystemRoot}" />
 			<sysproperty key="javatest.security.allowPropertiesAccess" value="true" />
 			<sysproperty key="java.endorsed.dirs" value="${ri.java.endorsed.dirs}" />
-			<sysproperty key="com.sun.enterprise.home" value="${javaee.home.ri}"/>
-			<sysproperty key="com.sun.aas.installRoot" value="${javaee.home.ri}"/>
+			<sysproperty key="com.sun.enterprise.home" value="${jakartaee.home.ri}"/>
+			<sysproperty key="com.sun.aas.installRoot" value="${jakartaee.home.ri}"/>
 		</java>
 	</target>
 
-	<!-- Set the archives to deploy based on the javaee.level setting-->
+	<!-- Set the archives to deploy based on the jakartaee.level setting-->
 	<target name="setup.archive.set">
 
 		<if>
-			<contains string="${javaee.level}" substring="web"/>
+			<contains string="${jakartaee.level}" substring="web"/>
 			<then>
 				<fileset dir="${dist.dir}/${pkg.dir}" id="deploy.vi.archive.set">
 					<include name="**/*.war"/>
@@ -216,7 +216,7 @@
 				</fileset>
 			</then>
 			<elseif>
-				<contains string="${javaee.level}" substring="component"/>
+				<contains string="${jakartaee.level}" substring="component"/>
 				<then>
 					<fileset dir="${dist.dir}/${pkg.dir}" id="deploy.vi.archive.set">
 						<include name="**/*ar"/>
@@ -404,53 +404,53 @@
 			<param name="target.dml.file" value="tssql.stmt.ri"/>
 		</antcall>
 
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.ri"/>
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="config.ri"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
 
 		<!-- If one user installs the RI and a different user installs the VI the   -->
 		<!-- config directories need to have their permissions loosened so at       -->
 		<!-- runtime, the appclient container may access the cacerts.jks file in    -->
 		<!-- both the RI and VI.  It also allows one user to config both the RI     -->
 		<!-- and VI.                                                                -->
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="ri.perms"/>
-		<ant antfile="javaee_ri.xml" target="start.javadb" dir="${bin.dir}/xml/impl/${impl.ri}"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="ri.perms"/>
+		<ant antfile="jakartaee_ri.xml" target="start.javadb" dir="${bin.dir}/xml/impl/${impl.ri}"/>
 		<ant antfile="initdb.xml" dir="${bin.dir}/xml" target="init.javadb.ri"/>
 		<record name="config_ri.log" action="stop"/>
 	</target>
 
 	<target name="restart.vi" >
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="restart.vi"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="restart.vi"/>
 	</target>
 
 	<target name="clean.ri">
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="clean.ri"/>
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="clean.ri"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
 	</target>
 
 	<target name="restart.ri">
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
 	</target>
 
 	<target name="config.vi">
 		<record name="config_vi.log" action="start"/>
 		<antcall target="modify.jstl.db.resources"/>
 
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="build.porting.impl.jar"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="build.porting.impl.jar"/>
         <property name="porting.impl.jar.already.built" value="true"/>
 
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="config.vi"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="config.vi"/>
 
 		<!-- If one user installs the RI and a different user installs the VI the   -->
 		<!-- config directories need to have their permissions loosened so at       -->
 		<!-- runtime, the appclient container may access the cacerts.jks file in    -->
 		<!-- both the RI and VI.  It also allows one user to config both the RI     -->
 		<!-- and VI.                                                                -->
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="vi.perms"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="vi.perms"/>
 		<record name="config_vi.log" action="stop"/>
 	</target>
 
 	<target name="clean.vi">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="clean.vi"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="clean.vi"/>
 	</target>
 
 	<!-- Disable JMS -->
@@ -475,7 +475,7 @@
 
 	<!-- http.doc.root.value possibilities.
         Remote - Unices
-          ${javaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/docroot
+          ${jakartaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/docroot
         DAS - Unix
           ${s1as.domain}/docroot
         Remote - Windows 
@@ -491,7 +491,7 @@
 			</and>
 		</condition>
 		<condition property="http.doc.root.value"
-                   value="${javaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/docroot">
+                   value="${jakartaee.home}/nodeagents/${sjsas.nodeagent.name}/${sjsas.nodeinstance.name}/docroot">
 			<equals arg1="${sjsas.env.type}" arg2="remote"/>
 		</condition>
 		<property name="http.doc.root.value" value="${http.doc.root}"/>
@@ -619,7 +619,7 @@
 			<param name="dml.file" value="${db.dml.file}"/>
 			<param name="target.dml.file" value="tssql.stmt"/>
 		</antcall>
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="modify.jdbc.resources"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="modify.jdbc.resources"/>
 	</target>
 
 	<target name="modify.jstl.db.resources">
@@ -632,7 +632,7 @@
 
 	<!-- Capture schema data for CMP tests used by CTS. -->
 	<target name="capture.db.schema">
-		<exec executable="${javaee.home.ri}/bin/capture-schema" >
+		<exec executable="${jakartaee.home.ri}/bin/capture-schema" >
 			<env key="CLASSPATH" value="${derby.classes}"/>
 			<arg line="-driver ${derby.driver}"/>
 			<arg line="-dburl ${derby.url}"/>
@@ -646,7 +646,7 @@
          configured database settings from the ts.jte file-->
 	<target name="configure.datasource.tests">
 		<if>
-			<contains string="${javaee.level}" substring="full"/>
+			<contains string="${jakartaee.level}" substring="full"/>
 			<then>
 				<dosubdirs srcdir="${ts.home}/src"
                    includes="com/sun/ts/tests/ejb30/lite/packaging/war/datasource,
@@ -665,42 +665,42 @@
 
 	<!-- Enable the use of jacc for the app server under test -->
 	<target name="enable.jacc">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="enable.jacc"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="enable.jacc"/>
 	</target>
 
 	<!-- Disable the use of jacc for the app server under test -->
 	<target name="disable.jacc">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="disable.jacc"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="disable.jacc"/>
 	</target>
 
 	<!-- Enable the wss providers for the app server under test (jaspic tests) -->
 	<target name="enable.wss.providers">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="enable.wss.providers"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="enable.wss.providers"/>
 	</target>
 
 	<!-- Disable the wss providers for the app server under test (jaspic tests) -->
 	<target name="disable.wss.providers">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="disable.wss.providers"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="disable.wss.providers"/>
 	</target>
 
 	<!-- Disable the TX interoperability on the Java EE RI -->
 	<target name="disable.ri.tx.interop">
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="disable.tx.interop"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="disable.tx.interop"/>
 	</target>
 
 	<!-- Enable the TX interoperability on the Java EE RI -->
 	<target name="enable.ri.tx.interop">
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="enable.tx.interop"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="enable.tx.interop"/>
 	</target>
 
 	<!-- Disable the TX interoperability on the appserver under test -->
 	<target name="disable.vi.tx.interop">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="disable.tx.interop"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="disable.tx.interop"/>
 	</target>
 
 	<!-- Enable the TX interoperability on the app server under test -->
 	<target name="enable.vi.tx.interop">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="enable.tx.interop"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="enable.tx.interop"/>
 	</target>
 
 	<!--
@@ -715,7 +715,7 @@
 
 	<target name="config.vi.javadb" depends="config.vi">
 		<record name="config_vi.log" action="start" append="yes"/>
-		<ant antfile="javaee_vi.xml" target="start.javadb" dir="${bin.dir}/xml/impl/${impl.vi}"/>
+		<ant antfile="jakartaee_vi.xml" target="start.javadb" dir="${bin.dir}/xml/impl/${impl.vi}"/>
 		<antcall target="init.javadb"/>
 		<record name="config_vi.log" action="stop"/>
 	</target>
@@ -745,7 +745,7 @@
 		<delete failonerror="false">
 			<fileset dir="${class.dir}">
 				<include name="${lib.pkg.dir}/deliverable/cts/**"/>
-				<include name="${lib.pkg.dir}/implementation/sun/javaee/**"/>
+				<include name="${lib.pkg.dir}/implementation/sun/jakartaee/**"/>
 				<include name="${lib.pkg.dir}/implementation/sun/common/**"/>
 				<include name ="${lib.pkg.dir}/implementation/sun/jersey/**"/>
 				<include name="${lib.pkg.dir}/tests/security/**"/>
@@ -763,23 +763,23 @@
 	<target name="tslib.compile" depends="tslib.clean, bind.dtds">
 		<ts.javac includes="${lib.pkg.dir}/deliverable/cts/**,
                             ${lib.pkg.dir}/porting/**/*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/**,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/**,
                             ${lib.pkg.dir}/implementation/sun/common/**,
                             ${lib.pkg.dir}/implementation/sun/jersey/**,
                             ${lib.pkg.dir}/tests/jdbc/CS_Procs.java,
                             ${lib.pkg.dir}/tests/security/**/*.java,
                             ${lib.pkg.dir}/tests/jpa/storedprocedures/**,
                             ${provider.dir}/**"
-                  excludes="${lib.pkg.dir}/implementation/sun/javaee/SunRIDeployment.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIDeployment1*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIPorting*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIDeploymentSeparateVM*.java,
+                  excludes="${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeployment.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeployment1*.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIPorting*.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeploymentSeparateVM*.java,
                             ${lib.pkg.dir}/porting/TSJMS*.java">
 			<classpath>
 				<pathelement path="${ts.lib.classpath}" />
 			</classpath>
 		</ts.javac>
-		<rmic classname="com.sun.ts.lib.implementation.sun.javaee.glassfish.AutoDeploymentServer" base="${class.dir}"/>
+		<rmic classname="com.sun.ts.lib.implementation.sun.jakartaee.glassfish.AutoDeploymentServer" base="${class.dir}"/>
 	</target>
 
 	<target name="jaspic.lib.clean" depends="translatepath">
@@ -809,7 +809,7 @@
 		<delete failonerror="true" file="${lib.dir}/${tslib.name}.jar"/>
 		<ts.lib.jar>
 			<include name="${lib.pkg.dir}/deliverable/cts/**"/>
-			<include name="${lib.pkg.dir}/implementation/sun/javaee/**"/>
+			<include name="${lib.pkg.dir}/implementation/sun/jakartaee/**"/>
 			<include name="${lib.pkg.dir}/implementation/sun/common/**"/>
 			<include name="${lib.pkg.dir}/tests/security/**"/>
 		</ts.lib.jar>
@@ -824,13 +824,13 @@
 		<antcall target="build.tsprovider.jar"/>
 		<antcall target="build.jaspic.jars"/>
 
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="build.porting.impl.jar"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="build.porting.impl.jar"/>
 
 	</target>
 
 	<!-- build porting impl jar for the impl under test -->
 	<target name="build.porting.impl.jar" description="Builds the porting impl classes for the impl under test">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="build.porting.impl.jar"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="build.porting.impl.jar"/>
 	</target>
 
 	<!-- build jaspic jars -->
@@ -894,13 +894,13 @@
 
 	<!-- convenience method to support configuration of jaspic -->
 	<target name="enable.jaspic">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="config.jaspic"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="config.jaspic"/>
 	</target>
 
 
 	<!-- convenience method to support un-configuration of jaspic -->
 	<target name="disable.jaspic">
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="unconfig.jaspic"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="unconfig.jaspic"/>
 	</target>
 
 	<!-- To update JAX-RS war with implementation specific servlet info before deployment -->
@@ -942,10 +942,10 @@
 
 	<target name="check.2glassfish.instances" >
 		<condition property="found.vi">
-			<available file="${javaee.home}" type="dir"/>
+			<available file="${jakartaee.home}" type="dir"/>
 		</condition>
 		<condition property="found.ri">
-			<available file="${javaee.home.ri}" type="dir"/>
+			<available file="${jakartaee.home.ri}" type="dir"/>
 		</condition>
 		<condition property="found.two.instances">
 			<and>
@@ -954,30 +954,30 @@
 			</and>
 		</condition>
 
-		<fail message="Make sure you have two instances of glassfish and set the values for javaee.home and javaee.home.ri in ts.jte"
+		<fail message="Make sure you have two instances of glassfish and set the values for jakartaee.home and jakartaee.home.ri in ts.jte"
               unless="found.two.instances"/>
 
 		<echo message="Found two Glassfish instances" />
 	</target>
 
 	<target name="modify.ri.ports" >
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="modify.ri.ports"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="modify.ri.ports"/>
 	</target>
 
 	<target name="start.javadb.asadmin" >
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="start.javadb.asadmin"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="start.javadb.asadmin"/>
 	</target>
 
 	<target name="stop.javadb.asadmin" >
-		<ant antfile="javaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="stop.javadb.asadmin"/>
+		<ant antfile="jakartaee_vi.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="stop.javadb.asadmin"/>
 	</target>
 
 	<target name="start.javadb.ri.asadmin" >
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="start.javadb.ri.asadmin"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="start.javadb.ri.asadmin"/>
 	</target>
 
 	<target name="stop.javadb.ri.asadmin" >
-		<ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="stop.javadb.ri.asadmin"/>
+		<ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="stop.javadb.ri.asadmin"/>
 	</target>
 
 	 <target name="init.ldap">

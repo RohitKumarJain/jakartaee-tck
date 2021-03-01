@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2020 Oracle and/or its affiliates and others.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates and others.
  * All rights reserved.
  *
  * This program and the accompanying materials are made available under the
@@ -346,7 +346,7 @@ public abstract class SignatureTestDriver {
 
     /*
      * The following will check if there are Optional Technologies being
-     * implemented but not explicitly defined thru (ts.jte) javaee.level
+     * implemented but not explicitly defined thru (ts.jte) jakartaee.level
      * property. This is a problem because if an optional technolgy is defined
      * (either whole or partially) than the TCK tests (and sig tests) for those
      * Optional Technology(s) MUST be run according to related specs.
@@ -356,7 +356,7 @@ public abstract class SignatureTestDriver {
         // 'unaccountedTechPkgs' are t hose packages which do not beling to
         // base technology nor one of the *declared* optionalal technologies.
         // 'unaccountedTechPkgs' refers to packages for Optional Technologies
-        // which were not defined thru (ts.jte) javaee.level property.
+        // which were not defined thru (ts.jte) jakartaee.level property.
         // So, make sure there are no whole or partial implementations of
         // undeclared optional technologies in the implementation
 
@@ -393,7 +393,7 @@ public abstract class SignatureTestDriver {
         // The user would have to either remove the technology from the impl if
         // they do not want to include it in their impl -OR- they must
         // explicitly
-        // set javaee.level (in ts.jte) to include that Optional Technology AND
+        // set jakartaee.level (in ts.jte) to include that Optional Technology AND
         // after setting this property, they have to pass all related TCK tests.
         if (runPackageSearch(packageName, args3)) {
           // if this passed we have an issue because it should not exist - thus
@@ -401,13 +401,13 @@ public abstract class SignatureTestDriver {
           TestUtil.logMsg("********** Package '" + packageName
               + "' - WAS FOUND BUT SHOULD NOT BE (REFLECTION MODE) **********");
           String err = "ERROR:  An area of concern has been identified.  ";
-          err += "You must run sigtests with (ts.jte) javaee.level set to ";
+          err += "You must run sigtests with (ts.jte) jakartaee.level set to ";
           err += "include all optional technology keywords.  Whole and/or ";
           err += "partial implementations of Optional Technologies ";
           err += "must be implemented according to the specs AND must pass ";
           err += "all related TCK tests.  To properly pass the ";
           err += "signature tests - you must identify all Optional Technology ";
-          err += "areas (via javaee.level) that you wish to pass signature tests for.";
+          err += "areas (via jakartaee.level) that you wish to pass signature tests for.";
           TestUtil.logMsg(err);
           result.addFailedPkg(packageName
               + " (Undeclared Optional Technology package found in reflection mode)");

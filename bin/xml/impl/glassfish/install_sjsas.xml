@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -43,11 +43,11 @@ The following facts makes it hard to maintain and generalize:
   <property file="${bin.dir}/ts.jte"/>
   <property environment="env"/>
   
-  <!-- s1as.home and javaee.home MUST be absolute path. On windows they MUST 
+  <!-- s1as.home and jakartaee.home MUST be absolute path. On windows they MUST 
   include drive letter, e.g., C:\Sun\AppServer7. s1as.home will be set to the
-  value of javaee.home only if s1as.home has not been set. -->
-  <property name="javaee.home" value="/sun/appserver9"/>
-  <property name="s1as.home" value="${javaee.home}"/>
+  value of jakartaee.home only if s1as.home has not been set. -->
+  <property name="jakartaee.home" value="/sun/appserver9"/>
+  <property name="s1as.home" value="${jakartaee.home}"/>
 
   <property name="s1as.admin.port" value="4848"/>
   <property name="s1as.admin.user" value="admin"/>
@@ -454,8 +454,8 @@ The following facts makes it hard to maintain and generalize:
     <property name="temp.dir"          value="${java.io.tmpdir}"/>
     <property name="v3.filename"       value="v3.zip"/>
     <property name="v4.filename"       value="v4.zip"/>
-    <property name="v3.install.dir"    value="${javaee.home.ri}"/>
-    <property name="v4.install.dir"    value="${javaee.home.ri}"/>
+    <property name="v3.install.dir"    value="${jakartaee.home.ri}"/>
+    <property name="v4.install.dir"    value="${jakartaee.home.ri}"/>
     <property name="get.verbose"       value="true"/>
     <property name="v3.hudson.url"
               value="http://hudson.glassfish.org/job/gf-trunk-build-continuous/lastSuccessfulBuild/artifact/bundles"/>
@@ -520,9 +520,9 @@ The following facts makes it hard to maintain and generalize:
       <!--
            Use a propregex here to peel off the glassfishv3/glassfish from the end
            of the specified install.dir.  This is useful if the install.dir is pulled from
-           the ts.jte property javaee.home.ri.  Since javaee.home will end with
+           the ts.jte property jakartaee.home.ri.  Since jakartaee.home will end with
            glassfishv3/glassfish.  This is the directory structure created when the
-           platform independent zip is unzipped. So if users use the javaee.home.ri property
+           platform independent zip is unzipped. So if users use the jakartaee.home.ri property
            to specify the install.dir they will want the glassfishv3/glassfish
            stripped off the directory where the bundle is unzipped.  If the install.dir
            does not end in glassfishv3/glassfish it will be left alone.  This will
@@ -533,7 +533,7 @@ The following facts makes it hard to maintain and generalize:
            "v" has been removed.  So we account for this by setting a v3.install.path to
            glassfish3 for version 3.1 else we set it to glassfishv3 for previous versions.
            
-           Note, the ts.jte javaee.home.ri property must be set appropriately for the version being
+           Note, the ts.jte jakartaee.home.ri property must be set appropriately for the version being
            installed for the install tasks to function properly.  For V 3.0 and 3.0.1 the install
            path should end with glassfishv3/glassfish.  For version 3.1 the install path should
            end with glassfish3/glassfish.  Users should also use the appropriate install targets.
@@ -553,7 +553,7 @@ The following facts makes it hard to maintain and generalize:
       </if>
       
       <!-- Check the target being run matches the v3.install.dir property.  -->
-      <!-- By default the v3.install.dir value is set to javaee.home.ri.    -->
+      <!-- By default the v3.install.dir value is set to jakartaee.home.ri.    -->
       <!-- Users can bypass this check by setting the expert.mode prop to   -->
       <!-- true using the -D option.  Ex. -Dexpert.mode=true                -->
       <property name="expert.mode" value="false"/>
@@ -573,7 +573,7 @@ The following facts makes it hard to maintain and generalize:
           ${line.separator}
           *****************************************************************
            Error, the target being run does not match the v3.install.dir.
-           Please verify the javaee.home.ri setting in your ts.jte and make
+           Please verify the jakartaee.home.ri setting in your ts.jte and make
            sure you are running the appropriate install target.
               v3.install.dir                   -> ${v3.install.dir}
               running a v3.1 (or 3.2) install target is -> @{is.v31}
@@ -769,9 +769,9 @@ The following facts makes it hard to maintain and generalize:
       <!--
            Use a propregex here to peel off the glassfishv4/glassfish from the end
            of the specified install.dir.  This is useful if the install.dir is pulled from
-           the ts.jte property javaee.home.ri.  Since javaee.home will end with
+           the ts.jte property jakartaee.home.ri.  Since jakartaee.home will end with
            glassfish4/glassfish.  This is the directory structure created when the
-           platform independent zip is unzipped. So if users use the javaee.home.ri property
+           platform independent zip is unzipped. So if users use the jakartaee.home.ri property
            to specify the install.dir they will want the glassfishv4/glassfish
            stripped off the directory where the bundle is unzipped.  If the install.dir
            does not end in glassfishv4/glassfish it will be left alone.  This will
@@ -779,7 +779,7 @@ The following facts makes it hard to maintain and generalize:
       -->
       <!--
            Change this prop name once the GF 4 bundle updates the base dir of the bundle.
-           The javaee.home.ri prop value in ts.jte should also be updated to glassfish4.
+           The jakartaee.home.ri prop value in ts.jte should also be updated to glassfish4.
        -->
           <property name="v4.install.path" value="glassfish6"/>
       

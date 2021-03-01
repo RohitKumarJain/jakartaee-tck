@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -270,7 +270,7 @@ harness.executeMode=2
 
 ########################################################
 # The alt.schema.dir and alt.dtd.dir properties specifu the location of
-# the Schemas used to package the TCK tests (web, javaee, etc).
+# the Schemas used to package the TCK tests (web, jakartaee, etc).
 # DO NOT EDIT
 ########################################################
 alt.dtd.dir=${ts.home}/lib/dtds

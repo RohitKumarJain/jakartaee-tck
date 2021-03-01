@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -218,7 +218,7 @@ List of failed smoke tests (See smoke log, included below, for more details):
 
 ${failed.tests}
 
-Server logs are located here: ${javaee.home.ri}/domains/domain1/logs
+Server logs are located here: ${jakartaee.home.ri}/domains/domain1/logs
 
 
 SmokeLog:
@@ -236,12 +236,12 @@ ${smoke.log.contents}
     pushed to smith and made available to CTS developers via NFS.  No one 
     outside of CTS should be looking for these artifacts for quite some time. 
 	<property name="target"
-       value="/net/invalid.domain.com/re_files2/jcqe/builds/tcks/javaee_cts/8/nightly"/>
+       value="/net/invalid.domain.com/re_files2/jcqe/builds/tcks/jakartaee_cts/8/nightly"/>
 -->
 	<property name="target"
-       value="/net/smith/files2/jcqe/builds/tcks/javaee_cts/8/nightly-jse"/>
+       value="/net/smith/files2/jcqe/builds/tcks/jakartaee_cts/8/nightly-jse"/>
 	<property name="nightly.archive"
-       value="/net/smith/files2/jcqe/builds/tcks/javaee_cts/8/nightly-archives"/>
+       value="/net/smith/files2/jcqe/builds/tcks/jakartaee_cts/8/nightly-archives"/>
 	<property name="fail.nightly.archive.copy" value="true"/>
 	<property name="svn.co.log" value="/hudson/jobs/Trunk.Setup/lastSuccessful/log"/>
 	<property name="release.notes" value="../../install/jakartaee/docs/ReleaseNotes.html"/>

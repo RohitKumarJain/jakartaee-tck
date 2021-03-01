@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -110,7 +110,7 @@ public abstract class SigTestEE extends ServiceEETest {
    * For example, with Java EE 7 implementation, a user could additionally opt
    * to test a JSR-88 technology along with the Java EE technology. But if the
    * user chooses NOT to list this optional technology for testing (via ts.jte
-   * javaee.level prop) then this method will return the packages for JSR-88
+   * jakartaee.level prop) then this method will return the packages for JSR-88
    * technology with this method call.
    * <p/>
    * This is useful for checking for a scenarios when a user may have forgotten

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -175,11 +175,11 @@
 
     <target name="copy.jsr196.hooks.config.jar">
        <copy file="${ts.home}/lib/gf-196-hookv3.jar"
-              tofile="${javaee.home}/lib/gf-196-hookv3.jar" overwrite="yes" />
+              tofile="${jakartaee.home}/lib/gf-196-hookv3.jar" overwrite="yes" />
     </target>
 
     <target name="delete.jsr196.hooks.config.jar">
-       <delete file="${javaee.home}/lib/gf-196-hookv3.jar" quiet="true"/>
+       <delete file="${jakartaee.home}/lib/gf-196-hookv3.jar" quiet="true"/>
     </target>
 
 

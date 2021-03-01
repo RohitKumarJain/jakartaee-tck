@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -109,7 +109,7 @@
             Do not deploy permissiondd.rar in web-profile
         -->
         <if>
-          <contains string="${javaee.level}" substring="web"/>
+          <contains string="${jakartaee.level}" substring="web"/>
         <then>
             <fileset  id="archives"
                   dir="${ts.home}/dist/"
@@ -247,7 +247,7 @@
         </antcall>
 
         <if>
-          <contains string="${javaee.level}" substring="web"/>
+          <contains string="${jakartaee.level}" substring="web"/>
         <then>
             <echo>cts-connector-pool-whitebox-permissiondd connection pool is not created for web profile</echo>
         </then>
@@ -332,7 +332,7 @@
         </antcall>
 
         <if>
-          <contains string="${javaee.level}" substring="web"/>
+          <contains string="${jakartaee.level}" substring="web"/>
         <then>
             <echo>cts-connector-pool-whitebox-permissiondd delete is not called for web-profile</echo>
         </then>
@@ -406,7 +406,7 @@
             <param name="jndiName" value="${whitebox-multianno}"/>
         </antcall>
         <if>
-          <contains string="${javaee.level}" substring="web"/>
+          <contains string="${jakartaee.level}" substring="web"/>
         <then>
             <echo>create cts-connector-pool-whitebox-permissiondd is not called for web-profile</echo>
         </then>
@@ -451,7 +451,7 @@
         </antcall>
 
         <if>
-          <contains string="${javaee.level}" substring="web"/>
+          <contains string="${jakartaee.level}" substring="web"/>
         <then>
             <echo>delete jndiName with value whitebox-permissiondd is not called for web-profile</echo>
         </then>

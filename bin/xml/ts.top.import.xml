@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -656,9 +656,9 @@
 
     <!-- Targets for creating the JAXB source classes used by DeploymentInfo -->
     <property name="porting.package"     
-              value="com.sun.ts.lib.implementation.sun.javaee.runtime"/>
+              value="com.sun.ts.lib.implementation.sun.jakartaee.runtime"/>
     <property name="porting.package.dir" 
-              value="com/sun/ts/lib/implementation/sun/javaee/runtime"/>
+              value="com/sun/ts/lib/implementation/sun/jakartaee/runtime"/>
 
     <target name="clean.jaxb">
         <antcall target="clean.jaxb.source" />  
@@ -779,14 +779,14 @@
             <!--
             <sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host}" />
             <sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port}" />
-            <sysproperty key="com.sun.ejb.home" value="${javaee.home}" />
+            <sysproperty key="com.sun.ejb.home" value="${jakartaee.home}" />
             <sysproperty key="ORB_HOST" value="${orb.host}" />
             <sysproperty key="ORB_PORT" value="${orb.port}" />
             <sysproperty key="ORB_HOST_RI" value="${orb.host.ri}" />
             <sysproperty key="ORB_PORT_RI" value="${orb.port.ri}" />
-            <sysproperty key="com.sun.enterprise.home" value="${javaee.home.ri}"/>
-            <sysproperty key="com.sun.aas.installRoot" value="${javaee.home.ri}"/>
-            <sysproperty key="com.sun.aas.configRoot" value="${javaee.home}/config"/>
+            <sysproperty key="com.sun.enterprise.home" value="${jakartaee.home.ri}"/>
+            <sysproperty key="com.sun.aas.installRoot" value="${jakartaee.home.ri}"/>
+            <sysproperty key="com.sun.aas.configRoot" value="${jakartaee.home}/config"/>
             -->
         </java>
     </presetdef>

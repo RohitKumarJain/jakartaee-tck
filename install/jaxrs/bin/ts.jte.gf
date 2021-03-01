@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2009, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2009, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -124,7 +124,7 @@ ts.run.classpath=${jaxrs_impl.classes}${pathsep}${jaxrs.classes}${pathsep}${serv
 ts.harness.classpath=${ts.home}/lib/tsharness.jar${pathsep}${ts.home}/lib/javatest.jar${pathsep}${ant.home}/lib/ant.jar${pathsep}${ts.home}/lib/jaxrstck.jar${pathsep}${ts.home}/lib/jaxb-xjc.jar
 
 apache.commons.classes=${pathsep}${ts.home}/lib/commons-httpclient-3.1.jar${pathsep}${ts.home}/lib/commons-logging-1.1.3.jar${pathsep}${ts.home}/lib/commons-codec-1.9.jar
-local.classes=${ts.harness.classpath}${pathsep}${ts.home}/lib/jaxrstck.jar${pathsep}${ts.home}/classes${pathsep}${ts.home}/lib/sigtest.jar${pathsep}${ts.home}/lib/javaee-api-6.0.jar:${apache.commons.classes}
+local.classes=${ts.harness.classpath}${pathsep}${ts.home}/lib/jaxrstck.jar${pathsep}${ts.home}/classes${pathsep}${ts.home}/lib/sigtest.jar${pathsep}${ts.home}/lib/jakartaee-api-6.0.jar:${apache.commons.classes}
 
 ts.classpath=${local.classes}${pathsep}${ts.run.classpath}
 
@@ -152,13 +152,13 @@ command.testExecute=com.sun.ts.lib.harness.ExecTSTestCmd \
         HOME="${user.home}" \
         windir=${windir} \
         SYSTEMROOT=${SYSTEMROOT} \
-        PATH="${javaee.home}/nativelib" \
+        PATH="${jakartaee.home}/nativelib" \
         ${JAVA_HOME}/bin/java \
         -Dcts.tmp=$harness.temp.directory \
         -Djava.protocol.handler.pkgs=javax.net.ssl \
         -Djavax.net.ssl.keyStore=${bin.dir}/certificates/clientcert.jks \
         -Djavax.net.ssl.keyStorePassword=changeit \
-        -Djavax.net.ssl.trustStore=${javaee.home}/domains/domain1/config/cacerts.jks \
+        -Djavax.net.ssl.trustStore=${jakartaee.home}/domains/domain1/config/cacerts.jks \
         -Djava.endorsed.dirs=${s1as.java.endorsed.dirs} \
         -Ddeliverable.class=${deliverable.class} $testExecuteClass $testExecuteArgs
 
@@ -260,7 +260,7 @@ deploy.delay.in.minutes=5
 #    com.sun.ts.lib.porting.TSHttpsURLConnectionInterface
 ###############################################################
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 
 #####################################################################
@@ -400,12 +400,12 @@ impl.vi.deploy.dir=
 tslib.name=jaxrstck
 javatest.timeout.factor=1
 impl.vi=glassfish
-impl.vi.deploy.dir=${javaee.home}/domains/domain1/autodeploy
+impl.vi.deploy.dir=${jakartaee.home}/domains/domain1/autodeploy
 jaxrs_impl_name=jersey
 harness.log.traceflag=true
 webServerHost=localhost
 webServerPort=8080
-web.home=${javaee.home}
+web.home=${jakartaee.home}
 web.modules=${web.home}/modules
 jaxrs_impl.classes=${web.modules}/jersey-client.jar:${web.modules}/jersey-common.jar:${web.modules}/jersey-server.jar:${web.modules}/jersey-container-servlet.jar:${web.modules}/jersey-container-servlet-core.jar:${web.modules}/osgi-resource-locator.jar:${web.modules}/jakarta.inject.jar:${web.modules}/guava.jar:${web.modules}/hk2-api.jar:${web.modules}/hk2-locator.jar:${web.modules}/hk2-utils.jar:${web.modules}/cglib.jar:${web.modules}/asm-all-repackaged.jar:${web.modules}/bean-validator.jar:${web.modules}/endorsed/jakarta.annotation-api.jar:${web.modules}/javax.json.jar
 jaxrs.classes=${web.modules}/jakarta.ws.rs-api.jar

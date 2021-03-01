@@ -440,9 +440,9 @@ impl.deploy.timeout.multiplier=10
 # @porting.ts.HttpsURLConnection.class.1  VI of
 #    com.sun.ts.lib.porting.TSHttpsURLConnectionInterface
 ###############################################################
-porting.ts.login.class.1=com.sun.ts.lib.implementation.sun.javaee.GlassFishLoginContext
+porting.ts.login.class.1=com.sun.ts.lib.implementation.sun.jakartaee.GlassFishLoginContext
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 
 ## Porting pkg class that identifies the component class that the

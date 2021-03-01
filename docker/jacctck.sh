@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -65,7 +65,7 @@ which java
 java -version
 
 sed -i 's#orb\.port=.*#orb.port=3699#g' ts.jte
-sed -i 's#javaee\.level=.*#javaee.level=full#g' ts.jte
+sed -i 's#jakartaee\.level=.*#jakartaee.level=full#g' ts.jte
 sed -i "s#jacc\.home=.*#jacc.home=$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish#g" ts.jte
 sed -i 's#jacc\.host=.*#jacc.host=localhost#g' ts.jte
 sed -i "s#^report.dir=.*#report.dir=$TCK_HOME/${TCK_NAME}report/${TCK_NAME}#g" ts.jte

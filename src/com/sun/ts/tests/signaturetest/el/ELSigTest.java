@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2020 Oracle and/or its affiliates and others.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates and others.
  * All rights reserved.
  *
  * This program and the accompanying materials are made available under the
@@ -34,7 +34,7 @@ import com.sun.ts.tests.signaturetest.SignatureTestDriverFactory;
  * SigTest framework class.  This signature test is run outside of the
  * Java EE containers.  This class also contains the boilerplate
  * code necessary to create a signature test using the test framework.
- * To see a complete TCK example see the javaee directory for the Java EE
+ * To see a complete TCK example see the jakartaee directory for the Java EE
  * TCK signature test class.
  */
 public class ELSigTest extends SigTest {

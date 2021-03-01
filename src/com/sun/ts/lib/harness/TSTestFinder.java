@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -563,7 +563,7 @@ public class TSTestFinder extends TagTestFinder {
     for (int ii = 0; ii < sKeywordsFromProperties.length; ii++) {
 
       // For any technologies that may be run on a web profile impl,
-      // only attach the javaee_web_profile or <techname>_web_profile keywords
+      // only attach the jakartaee_web_profile or <techname>_web_profile keywords
       // if
       // the vehicle in use for the test is required by a web profile impl.
       if (sKeywordsFromProperties[ii].contains("web_profile")
@@ -587,7 +587,7 @@ public class TSTestFinder extends TagTestFinder {
 
     // Add the vehicle as a standlone keyword. This is useful
     // if you want to use expressions when specifying keywords like the
-    // following... javaee.webprofile | connector & web.vehicle
+    // following... jakartaee.webprofile | connector & web.vehicle
     if (sVehicle != null) {
       sKeywords += sVehicle + "_vehicle ";
     } else {

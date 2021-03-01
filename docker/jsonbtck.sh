@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -68,7 +68,7 @@ sed -i "s#^work.dir=.*#work.dir=$TCK_HOME/${TCK_NAME}work/${TCK_NAME}#g" ts.jte
 sed -i "s#jsonb\.classes=.*#jsonb.classes=$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish/modules/jakarta.json.jar:$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish/modules/jakarta.json.bind-api.jar:$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish/modules/jakarta.json.jar:$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish/modules/jakarta.inject-api.jar:$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish/modules/jakarta.servlet-api.jar:$TCK_HOME/$GF_TOPLEVEL_DIR/glassfish/modules/yasson.jar#" ts.jte
 
 if [[ "$PROFILE" == "web" || "$PROFILE" == "WEB" ]]; then
-  echo "javaee.level=web"  >> ts.jte
+  echo "jakartaee.level=web"  >> ts.jte
 fi
 
 mkdir -p $TCK_HOME/${TCK_NAME}report/${TCK_NAME}

@@ -29,8 +29,8 @@
                      com/sun/ts/tests/jaspic/spi/servlet,
                      com/sun/ts/tests/common/vehicle/jaspicservlet,
                      com/sun/ts/tests/signaturetest/jaspic"/>
-    <property name="javaee.home" value = "${jaspic.home}"/>
-    <property name="javaee.home.ri" value = "${jaspic.home}"/>
+    <property name="jakartaee.home" value = "${jaspic.home}"/>
+    <property name="jakartaee.home.ri" value = "${jaspic.home}"/>
     <property name="orb.host.ri" value = "${orb.host}"/>
     <property name="orb.port.ri" value = "${orb.port}"/>
         
@@ -62,10 +62,10 @@
     </target>
 
 
-    <!-- Set the archives to deploy based on the javaee.level setting-->
+    <!-- Set the archives to deploy based on the jakartaee.level setting-->
     <target name="setup.archive.set">
       <if>
-        <contains string="${javaee.level}" substring="web"/>
+        <contains string="${jakartaee.level}" substring="web"/>
       <then>
           <fileset dir="${dist.dir}/${pkg.dir}" id="deploy.vi.archive.set">
             <include name="**/*.war"/>
@@ -93,7 +93,7 @@
           </fileset>
       </then>
       <elseif>
-        <contains string="${javaee.level}" substring="component"/>
+        <contains string="${jakartaee.level}" substring="component"/>
       <then>
           <fileset dir="${dist.dir}/${pkg.dir}" id="deploy.vi.archive.set">
             <include name="**/*ar"/>
@@ -238,19 +238,19 @@
 <!--
     <target name="config.ri">
         <record name="config_ri.log" action="start"/>
-        <ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="config.ri"/>
-        <ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="restart.server"/>
-        <ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="ri.perms"/>
+        <ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="config.ri"/>
+        <ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="restart.server"/>
+        <ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.vi}" target="ri.perms"/>
         <record name="config_ri.log" action="stop"/>
     </target>
 
     <target name="clean.ri">
-        <ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="clean.ri"/>
-        <ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
+        <ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="clean.ri"/>
+        <ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
     </target>
 
     <target name="restart.ri">
-        <ant antfile="javaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
+        <ant antfile="jakartaee_ri.xml" dir="${bin.dir}/xml/impl/${impl.ri}" target="restart.server"/>
     </target>
 -->
 
@@ -318,7 +318,7 @@
             <fileset dir="${class.dir}">
                 <include name="${lib.pkg.dir}/deliverable/jaspic/**"/>
                 <include name="${lib.pkg.dir}/deliverable/cts/**"/>
-                <include name="${lib.pkg.dir}/implementation/sun/javaee/**"/>
+                <include name="${lib.pkg.dir}/implementation/sun/jakartaee/**"/>
                 <include name="${lib.pkg.dir}/implementation/sun/common/**"/>
                 <include name="${tssv.dir}/"/>
             </fileset>
@@ -332,16 +332,16 @@
         <ts.javac includes="${lib.pkg.dir}/deliverable/jaspic/**,
                             ${lib.pkg.dir}/deliverable/cts/**,
                             ${pkg.dir}/porting/**/*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/**,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/**,
                             ${lib.pkg.dir}/implementation/sun/common/**,
                             ${lib.pkg.dir}/tests/jdbc/CS_Procs.java,
                             ${tssv.dir}/**"
-                  excludes="${lib.pkg.dir}/implementation/sun/javaee/SunRIDeployment.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIDeployment1*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIDeployment2*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIPorting*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/SunRIDeploymentSeparateVM*.java,
-                            ${lib.pkg.dir}/implementation/sun/javaee/six/**">
+                  excludes="${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeployment.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeployment1*.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeployment2*.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIPorting*.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeploymentSeparateVM*.java,
+                            ${lib.pkg.dir}/implementation/sun/jakartaee/six/**">
             <classpath>
                 <pathelement path="${ts.lib.classpath}" />
             </classpath>	
@@ -354,7 +354,7 @@
         <delete failonerror="true" file="${lib.dir}/${tslib.name}.jar"/>
         <ts.lib.jar>
             <include name="${lib.pkg.dir}/deliverable/**"/>
-            <include name="${lib.pkg.dir}/implementation/sun/javaee/**"/>
+            <include name="${lib.pkg.dir}/implementation/sun/jakartaee/**"/>
             <include name="${lib.pkg.dir}/implementation/sun/common/**"/>
             <exclude name="${lib.dir}/deliverable/cts/resource/**"/>
         </ts.lib.jar>

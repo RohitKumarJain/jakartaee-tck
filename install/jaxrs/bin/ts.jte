@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2009, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2009, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -151,7 +151,7 @@ command.testExecute=com.sun.ts.lib.harness.ExecTSTestCmd \
         HOME="${user.home}" \
         windir=${windir} \
         SYSTEMROOT=${SYSTEMROOT} \
-        PATH="${javaee.home}/nativelib" \
+        PATH="${jakartaee.home}/nativelib" \
         ${JAVA_HOME}/bin/java \
         -Dcts.tmp=$harness.temp.directory \
         -Djava.endorsed.dirs=${s1as.java.endorsed.dirs} \
@@ -270,7 +270,7 @@ deploy.delay.in.minutes=5
 #    com.sun.ts.lib.porting.TSHttpsURLConnectionInterface
 ###############################################################
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 
 #####################################################################
@@ -360,12 +360,12 @@ authpassword=javajoe
 #################################################################
 # To Configure config.vi with security manager
 #################################################################
-javaee.home=${web.home}
+jakartaee.home=${web.home}
 ###############################################################
 ## Config params needed for Sun Java System Application Server
 ## (SJSAS) asadmin. You must change these values as needed
 ## only if you are testing against SJSAS app server
-## (javaee.home is pointing to SJSAS).
+## (jakartaee.home is pointing to SJSAS).
 #
 # @s1as.admin.host     -- The SJSAS host
 # @s1as.admin.port     -- The SJSAS port
@@ -374,8 +374,8 @@ javaee.home=${web.home}
 # @s1as.domain.name    -- The SJSAS domain being used
 # @s1as.domain         -- The SJSAS domain path being used
 ############################################################### 
-s1as.admin=${javaee.home}/bin/asadmin
-s1as.domain.dir=${javaee.home}/domains
+s1as.admin=${jakartaee.home}/bin/asadmin
+s1as.domain.dir=${jakartaee.home}/domains
 s1as.domain.name=${glassfish.domain.name}
 s1as.domain=${s1as.domain.dir}/${s1as.domain.name}
 s1as.admin.host=${glassfish.admin.host}

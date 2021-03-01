@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -46,7 +46,7 @@
         <java classname="com.sun.ts.tests.javamail.ee.util.fpopulate" >
             <arg line="-s ${mailboxFolder1} -d ${destinationURL} -user ${javamail.username} -password ${javamail.password} -host ${javamail.server}  -port ${imap.port} -protocol ${javamail.protocol}" />
             <classpath>
-                <pathelement path="${class.dir}${path.separator}${javaee.classes}"/>
+                <pathelement path="${class.dir}${path.separator}${jakartaee.classes}"/>
                 <pathelement path="${ts.home}/lib/tsharness.jar"/>
             </classpath>
         </java>
@@ -55,7 +55,7 @@
         <java classname="com.sun.ts.tests.javamail.ee.util.fpopulate">
             <arg line="-s ${mailboxFolder2} -d ${destinationURL} -user ${javamail.username} -password ${javamail.password} -host ${javamail.server} -port ${imap.port} -protocol ${javamail.protocol}" />
             <classpath>
-                <pathelement path="${class.dir}${path.separator}${javaee.classes}"/>
+                <pathelement path="${class.dir}${path.separator}${jakartaee.classes}"/>
                 <pathelement path="${ts.home}/lib/tsharness.jar"/>
             </classpath>
         </java>
@@ -64,7 +64,7 @@
         <java classname="com.sun.ts.tests.javamail.ee.util.fpopulate">
             <arg line="-s ${mailboxFolder3} -d ${destinationURL} -user ${javamail.username} -password ${javamail.password} -host ${javamail.server} -port ${imap.port} -protocol ${javamail.protocol}" />
             <classpath>
-                <pathelement path="${class.dir}${path.separator}${javaee.classes}"/>
+                <pathelement path="${class.dir}${path.separator}${jakartaee.classes}"/>
                 <pathelement path="${ts.home}/lib/tsharness.jar"/>
             </classpath>
         </java>
@@ -74,7 +74,7 @@
         <java classname="com.sun.ts.tests.javamail.ee.util.fpopulate">
             <arg line="-s ${mailboxFolder1}  -deleteFolder -d ${destinationURL} -c -user ${javamail.username} -password ${javamail.password} -host ${javamail.server} -port ${imap.port} -protocol ${javamail.protocol}" />
             <classpath>
-                <pathelement path="${class.dir}${path.separator}${javaee.classes}"/>
+                <pathelement path="${class.dir}${path.separator}${jakartaee.classes}"/>
                 <pathelement path="${ts.home}/lib/tsharness.jar"/>
             </classpath>
         </java>
@@ -83,7 +83,7 @@
         <java classname="com.sun.ts.tests.javamail.ee.util.fpopulate">
             <arg line="-s ${mailboxFolder2}  -deleteFolder -d ${destinationURL} -c -user ${javamail.username} -password ${javamail.password} -host ${javamail.server} -port ${imap.port} -protocol ${javamail.protocol}" />
             <classpath>
-                <pathelement path="${class.dir}${path.separator}${javaee.classes}"/>
+                <pathelement path="${class.dir}${path.separator}${jakartaee.classes}"/>
                 <pathelement path="${ts.home}/lib/tsharness.jar"/>
             </classpath>
         </java>
@@ -92,7 +92,7 @@
         <java classname="com.sun.ts.tests.javamail.ee.util.fpopulate">
             <arg line="-s ${mailboxFolder3}  -deleteFolder -d ${destinationURL} -c -user ${javamail.username} -password ${javamail.password} -host ${javamail.server} -port ${imap.port} -protocol ${javamail.protocol}" />
             <classpath>
-                <pathelement path="${class.dir}${path.separator}${javaee.classes}"/>
+                <pathelement path="${class.dir}${path.separator}${jakartaee.classes}"/>
                 <pathelement path="${ts.home}/lib/tsharness.jar"/>
             </classpath>
         </java>

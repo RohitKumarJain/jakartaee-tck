@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates and others.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates and others.
     All rights reserved.
 
     This program and the accompanying materials are made available under the
@@ -54,7 +54,7 @@
 
 
     <target name="deploy.all" description="Deploy all archives.">
-        <echo message="javaee.level: ${javaee.level}" />
+        <echo message="jakartaee.level: ${jakartaee.level}" />
         <property name="pkg.dir" value="com/sun/ts/tests/servlet"/>
         <ant antfile="build.xml" dir="${ts.home}/src/com/sun/ts/tests/servlet" target="deploy"/>
     </target>
@@ -76,13 +76,13 @@
                   ${lib.pkg.dir}/deliverable/tck/**,
                   ${lib.pkg.dir}/porting/**/*.java,
                   ${lib.pkg.dir}/implementation/sun/common/**,
-                  ${lib.pkg.dir}/implementation/sun/javaee/SunRIHttpsURLConnection.java,
+                  ${lib.pkg.dir}/implementation/sun/jakartaee/SunRIHttpsURLConnection.java,
                   ${provider.dir}/**,
                   com/sun/ts/tests/common/vehicle/VehicleClient.java,
                   com/sun/ts/tests/common/vehicle/VehicleRunnerFactory.java,
                   com/sun/ts/tests/common/vehicle/EmptyVehicleRunner.java,
                   com/sun/ts/tests/common/vehicle/VehicleRunnable.java"
-                excludes="${lib.pkg.dir}/implementation/sun/javaee/SunRIDeploy**,
+                excludes="${lib.pkg.dir}/implementation/sun/jakartaee/SunRIDeploy**,
                   ${lib.pkg.dir}/porting/TSJMS*.java,
         ${lib.pkg.dir}/porting/TSDeployment*.java">
             <classpath>
@@ -99,7 +99,7 @@
             <include name="${lib.pkg.dir}/deliverable/servlet/**"/>
             <include name="${lib.pkg.dir}/deliverable/tck/**"/>
             <include name="${lib.pkg.dir}/implementation/sun/common/**"/>
-            <include name="${lib.pkg.dir}/implementation/sun/javaee/**"/>
+            <include name="${lib.pkg.dir}/implementation/sun/jakartaee/**"/>
             <include name="com/sun/ts/tests/common/vehicle/VehicleClient.class"/>
             <include name="com/sun/ts/tests/common/vehicle/VehicleRunnerFactory.class"/>
             <include name="com/sun/ts/tests/common/vehicle/EmptyVehicleRunner.class"/>

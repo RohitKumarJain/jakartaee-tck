@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2007, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -23,7 +23,7 @@ package com.sun.ts.lib.deliverable.jaspic;
 
 import com.sun.ts.lib.deliverable.PropertyManagerInterface;
 import com.sun.ts.lib.porting.DeploymentInfo;
-import com.sun.ts.lib.implementation.sun.javaee.runtime.SunRIDeploymentInfo;
+import com.sun.ts.lib.implementation.sun.jakartaee.runtime.SunRIDeploymentInfo;
 import com.sun.ts.lib.deliverable.AbstractDeliverable;
 import com.sun.ts.lib.deliverable.PropertyNotSetException;
 import com.sun.ts.lib.util.TestUtil;

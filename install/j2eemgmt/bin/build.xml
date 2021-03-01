@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -125,8 +125,8 @@
    </target>
    
    <target name="translatepath">
-     <translatepath propname="javaee.home.ri"/>
-     <translatepath propname="javaee.home"/>
+     <translatepath propname="jakartaee.home.ri"/>
+     <translatepath propname="jakartaee.home"/>
      <translatepath propname="local.classes"/>
      <translatepath propname="local.classes.ri"/>
      <translatepath propname="java.endorsed.dirs"/>
@@ -165,9 +165,9 @@
 		<sysproperty key="java.compiler" value="NONE"/>
 		<sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host}" />
 		<sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port}" />
-		<sysproperty key="com.sun.ejb.home" value="${javaee.home}" />
+		<sysproperty key="com.sun.ejb.home" value="${jakartaee.home}" />
 		<sysproperty key="TS_HOME" value="${ts.home}" />
-		<sysproperty key="J2EE_HOME" value="${javaee.home}" />
+		<sysproperty key="J2EE_HOME" value="${jakartaee.home}" />
 		<sysproperty key="JAVA_HOME" value="${java.home}"  />		
 		<sysproperty key="JAVA_OPTIONS" value="${java.options}" />			
 		<sysproperty key="cts.jtroutput" value="true" />
@@ -179,7 +179,7 @@
 		<sysproperty key="java.security.policy" value="${bin.dir}/harness.policy" />
 		<sysproperty key="ORB_HOST" value="${orb.host}" />
 		<sysproperty key="ORB_PORT" value="${orb.port}" />
-		<sysproperty key="J2EE_HOME_RI" value="${javaee.home.ri}" />
+		<sysproperty key="J2EE_HOME_RI" value="${jakartaee.home.ri}" />
 		<sysproperty key="LOCAL_CLASSES_RI" value="${local.classes.ri}" />
         <sysproperty key="ORB_HOST_RI" value="${orb.host.ri}" />
         <sysproperty key="ORB_PORT_RI" value="${orb.port.ri}" />
@@ -207,9 +207,9 @@
 		<sysproperty key="java.compiler" value="NONE"/>
 		<sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host}" />
 		<sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port}" />
-		<sysproperty key="com.sun.ejb.home" value="${javaee.home}" />
+		<sysproperty key="com.sun.ejb.home" value="${jakartaee.home}" />
 		<sysproperty key="TS_HOME" value="${ts.home}" />
-		<sysproperty key="J2EE_HOME" value="${javaee.home}" />
+		<sysproperty key="J2EE_HOME" value="${jakartaee.home}" />
 		<sysproperty key="JAVA_HOME" value="${java.home}"  />		
 		<sysproperty key="JAVA_OPTIONS" value="${java.options}" />			
 		<sysproperty key="cts.jtroutput" value="true" />
@@ -220,7 +220,7 @@
 		<sysproperty key="java.security.policy" value="${bin.dir}/harness.policy" />
 		<sysproperty key="ORB_HOST" value="${orb.host}" />
 		<sysproperty key="ORB_PORT" value="${orb.port}" />
-		<sysproperty key="J2EE_HOME_RI" value="${javaee.home.ri}" />
+		<sysproperty key="J2EE_HOME_RI" value="${jakartaee.home.ri}" />
 		<sysproperty key="LOCAL_CLASSES_RI" value="${local.classes.ri}" />
         <sysproperty key="ORB_HOST_RI" value="${orb.host.ri}" />
         <sysproperty key="ORB_PORT_RI" value="${orb.port.ri}" />
@@ -263,13 +263,13 @@
   </target>
 
   <target name="start.sunri.porting.server" depends="init">
-    <java classname="com.sun.ts.lib.implementation.sun.javaee.SunRIPortingServer" fork="yes" failonerror="yes" 
+    <java classname="com.sun.ts.lib.implementation.sun.jakartaee.SunRIPortingServer" fork="yes" failonerror="yes" 
       classpath="${ts.classpath}">
       <sysproperty key="java.security.policy" value="${bin.dir}/harness.policy"/>
       <sysproperty key="org.omg.CORBA.ORBInitialHost" value="${orb.host.ri}"/>
       <sysproperty key="org.omg.CORBA.ORBInitialPort" value="${orb.port.ri}"/>
       <sysproperty key="java.endorsed.dirs" value="${java.endorsed.dirs}" />
-      <sysproperty key="com.sun.enterprise.home" value="${javaee.home.ri}"/>
+      <sysproperty key="com.sun.enterprise.home" value="${jakartaee.home.ri}"/>
       <sysproperty key="cts.harness.debug" value="${cts.harness.debug}"/>
       <sysproperty key="deliverable.class" value="${deliverable.class}" />
     </java>

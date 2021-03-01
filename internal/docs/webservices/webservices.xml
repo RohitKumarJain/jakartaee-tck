@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -1507,10 +1507,10 @@ Generation of any run-time classes the container requires to support a JAX-RPC o
 <id>WS4EE:SPEC:219</id>
 <description> All webservices deployment
 			descriptors must indicate the webservices schema by using the JavaEE
-			namespace: http://java.sun.com/xml/ns/javaee and by indicating the
+			namespace: http://java.sun.com/xml/ns/jakartaee and by indicating the
 			version of the schema by using the version element. The XML Schema for the 
 			Web service deployment descriptor is available at 
-			http://java.sun.com/xml/ns/javaee/javaee_web_services_1_3.xsd </description>
+			http://java.sun.com/xml/ns/jakartaee/jakartaee_web_services_1_3.xsd </description>
 <location chapter="7" section="1.5" />
 </assertion>
 <assertion required="true" impl-spec="false" defined-by="technology" status="active" testable="true">
@@ -1741,7 +1741,7 @@ Generation of any run-time classes the container requires to support a JAX-RPC o
 <assertion required = "true" impl-spec = "false" defined-by = "technology" status = "active" testable = "true">
 <id>WS4EE:SPEC:253</id>
 <description>
-This section defines the XML Schema for the service-ref at http://java.sun.com/xml/ns/javaee/javaee_web_services_client_1_3.xsd. This schema is imported into the common Java EE 6 schema and is used by the application client, web, and EJB module deployment descriptor schemas to declare service-refs. See the Java EE 6, Servlet 3.0, and EJB 3.1 specifications for more details on specifying a service-ref in the deployment descriptors.
+This section defines the XML Schema for the service-ref at http://java.sun.com/xml/ns/jakartaee/jakartaee_web_services_client_1_3.xsd. This schema is imported into the common Java EE 6 schema and is used by the application client, web, and EJB module deployment descriptor schemas to declare service-refs. See the Java EE 6, Servlet 3.0, and EJB 3.1 specifications for more details on specifying a service-ref in the deployment descriptors.
 </description>
 <location chapter = "7" section = "2.5"/>
 </assertion>

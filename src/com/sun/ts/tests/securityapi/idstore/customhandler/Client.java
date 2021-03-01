@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2017, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -100,7 +100,7 @@ public class Client extends BaseIDStoreClient {
     invoke();
     dumpResponse();
     // The groups in Ldap server is not returned due to bug#
-    // https://github.com/javaee-security-spec/soteria/issues/78
+    // https://github.com/jakartaee-security-spec/soteria/issues/78
     checkGroupsSet("ValidateResultGroups",
         "customIdentiyStoreHandler, getCallerGroups, Administrator, Manager, Administrator1, Manager1");
 

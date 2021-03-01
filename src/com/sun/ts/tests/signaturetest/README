@@ -186,7 +186,7 @@ what to test - the getPackages() appears to be the more common method to use.
 
 Examples of test classes and a build file are provided in the
 $TS_HOME/src/com/sun/ts/tests/signaturetest directory.  The 
-$TS_HOME/src/com/sun/ts/tests/signaturetest/javaee directory can also be used
+$TS_HOME/src/com/sun/ts/tests/signaturetest/jakartaee directory can also be used
 as an example (it contains the Jakarta EE TCK signature tests).  The files:
   $TS_HOME/src/com/sun/ts/tests/signaturetest/build.xml.txt
   $TS_HOME/src/com/sun/ts/tests/signaturetest/SampleSigTest.java.txt
@@ -405,7 +405,7 @@ sigTestClasspath variable.  If your particular TCK does not have this
 variable in the ts.jte file, add it.  This should contain the jar files
 for the classes you are testing AND any classes that will be referenced.
 Example/
-   sigTestClasspath=${javaee.home}/lib/jakartaee-api.jar:${JAVA_HOME}/lib/rt.jar
+   sigTestClasspath=${jakartaee.home}/lib/jakartaee-api.jar:${JAVA_HOME}/lib/rt.jar
 
 
 

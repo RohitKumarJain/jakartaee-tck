@@ -23,7 +23,7 @@ and set up the following software components:
 
    mkdir /ri
    cd /ri
-   unzip <javaee7-ri-zip-bundle>
+   unzip <jakartaee7-ri-zip-bundle>
 
 3. Download and install the CONCURRENCY TCK 1.0 software.
 
@@ -51,7 +51,7 @@ Setup and Configuration of the CONCURRENCY TCK
 
     Set webcontainer home to point to path where Java EE 7 RI is installed:
 
-    webcontainer.home=/path-to-javaee7-ri-installation
+    webcontainer.home=/path-to-jakartaee7-ri-installation
 
     Set concurrency classes property to point to implementaion classes needed
     for JavaEE7 4 RI:

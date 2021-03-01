@@ -314,7 +314,7 @@ This runs all tests in the current directory and any subdirectories.
 
 8. To run the Java EE 8 CTS signature tests, enter the following commands:
     ```
-    cd <TS_HOME>/src/com/sun/ts/tests/signaturetest/javaee
+    cd <TS_HOME>/src/com/sun/ts/tests/signaturetest/jakartaee
     ant runclient
     ```
 

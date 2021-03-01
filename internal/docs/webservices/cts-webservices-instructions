@@ -15,26 +15,26 @@ CTS Instructions to get, configure and run CTS 6 technology bundle for webservic
 
     Example)
     --------
-    mkdir /files/javaee
-    cd /files/javaee
+    mkdir /files/jakartaee
+    cd /files/jakartaee
     unzip bundle
 
-    This will create a glassfish bundle installation under /files/javaee/glassfishv3 
+    This will create a glassfish bundle installation under /files/jakartaee/glassfishv3 
 
-(2) Grab the javaee technology bundle of interest for CTS 6 builds which are built
+(2) Grab the jakartaee technology bundle of interest for CTS 6 builds which are built
     using nightly Java EE 6 RI builds from here:
 
     CTS Bundle location
     -------------------
-    http://invalid.domain.com/JWSCQE/links/builds/tcks/javaee_cts/6/patch-nightly
+    http://invalid.domain.com/JWSCQE/links/builds/tcks/jakartaee_cts/6/patch-nightly
 
     Example) To run just webservices related technologies you can grab the following:
 
-    o javaee-webservices-6.0_<DateTimeStamp>.zip
+    o jakartaee-webservices-6.0_<DateTimeStamp>.zip
 
        or the full cts bundle
 
-    o javaeetck-6.0_<DateTimeStamp>.zip
+    o jakartaeetck-6.0_<DateTimeStamp>.zip
 
 (3) Create a directory to hold the cts webservices bundle
 
@@ -42,19 +42,19 @@ CTS Instructions to get, configure and run CTS 6 technology bundle for webservic
     cd /files/cts
     unzip the bundle into this directory
 
-    This will create a test bundle under /files/cts/javaee-webservices 
+    This will create a test bundle under /files/cts/jakartaee-webservices 
 
      or for the full CTS bundle
 
-    This will create a test bundle under /files/cts/javaeetck 
+    This will create a test bundle under /files/cts/jakartaeetck 
 
-(4) Edit your ts.jte file under /files/cts/javaee-webservices/bin/ts.jte or
-    /files/cts/javaeetck/bin/ts.jte
+(4) Edit your ts.jte file under /files/cts/jakartaee-webservices/bin/ts.jte or
+    /files/cts/jakartaeetck/bin/ts.jte
 
-    set javaee.home     set to directory where your GlassFish v3 appserver is installed
-                        (from above this would be set to /files/javaee/glassfishv3/glassfish
+    set jakartaee.home     set to directory where your GlassFish v3 appserver is installed
+                        (from above this would be set to /files/jakartaee/glassfishv3/glassfish
                          NOTE: subdir glassfish after glassfishv3)
-        javaee.home.ri  (same as javaee.home)
+        jakartaee.home.ri  (same as jakartaee.home)
         orb.host 	set to host where GlassFish appserver is running (I use localhost)
         orb.port 	set to port where GlassFish appserver is running (usually 3699)
         orb.host.ri     for most cases, this is same as orb.host
@@ -62,17 +62,17 @@ CTS Instructions to get, configure and run CTS 6 technology bundle for webservic
 
 (5) Set the following environment variables and configure your appserver for CTS
 
-    setenv TS_HOME /files/cts/javaee-webservices		# Set to top level unzipped bundle dir
+    setenv TS_HOME /files/cts/jakartaee-webservices		# Set to top level unzipped bundle dir
 
 	  or if full CTS bundle
 
-    setenv TS_HOME /files/cts/javaeetck				# Set to top level unzipped bundle dir
+    setenv TS_HOME /files/cts/jakartaeetck				# Set to top level unzipped bundle dir
 
     setenv ANT_HOME $TS_HOME/tools/ant				# Need to point to ant within CTS (uses special ant libs within CTS)
 								# Set ANT_OPTS to pickup new endorsed API's (jaxws2.2/jaxb2.2 etc ...)
 								# and for GlassFish V3 use full absolute path to endorsed dir.
 
-    setenv ANT_OPTS -Djava.endorsed.dirs=/files/javaee/glassfishv3/glassfish/modules/endorsed
+    setenv ANT_OPTS -Djava.endorsed.dirs=/files/jakartaee/glassfishv3/glassfish/modules/endorsed
 
 								# ANT_OPTS setting is needed when using ant to
 								# build the tests so it picks up the right API's
@@ -138,13 +138,13 @@ CTS Instructions to get, configure and run CTS 6 technology bundle for webservic
     cd $TS_HOME/src/com/sun/ts/tests/jaxws/ee/j2w/document/literal/marshalltest
     ant ld
 Buildfile: build.xml
-     [echo] ts.home = /files/cts/javaee-webservices/bin/xml/../..
-     [echo] The deliverable currently in use is /files/cts/javaee-webservices/bin/xml/../../bin.
+     [echo] ts.home = /files/cts/jakartaee-webservices/bin/xml/../..
+     [echo] The deliverable currently in use is /files/cts/jakartaee-webservices/bin/xml/../../bin.
 Trying to override old definition of datatype string
 
 ld:
      [echo] Files under
-     [echo] /files/cts/javaee-webservices/bin/xml/../../dist/com/sun/ts/tests/jaxws/ee/w2j/document/literal/marshalltest
+     [echo] /files/cts/jakartaee-webservices/bin/xml/../../dist/com/sun/ts/tests/jaxws/ee/w2j/document/literal/marshalltest
      [echo] --------------------------------------------------
      [echo] WSW2JDLMarshallTest.ear
      [echo] WSW2JDLMarshallTest_web.war
@@ -240,24 +240,24 @@ Total time: 3 seconds
     via TestUtil.logTrace calls. The default setting is false.
 
 
-(11) Java EE 6 now has the concept of profiles. By default CTS 6 runs the javaee profile.
+(11) Java EE 6 now has the concept of profiles. By default CTS 6 runs the jakartaee profile.
     Various profile data is specified in:
 
     o TS_HOME/src/com/sun/ts/lib/harness/keyword.properties
 
     Examples of using keywords property to specify profiles are as follows
 
-    To run the full javaee profile of tests
+    To run the full jakartaee profile of tests
     ---------------------------------------
     cd $TS_HOME/src/com/sun/ts/tests
     ant runclient
       or
-    ant -Dkeywords=javaee runclient	# This is the same as above since javaee is the default profile run
+    ant -Dkeywords=jakartaee runclient	# This is the same as above since jakartaee is the default profile run
 
-    To run the javaee web profile of tests
+    To run the jakartaee web profile of tests
     --------------------------------------
     cd $TS_HOME/src/com/sun/ts/tests
-    ant -Dkeywords=javaee_web_profile runclient
+    ant -Dkeywords=jakartaee_web_profile runclient
 
     To run the jsr109 profile in both (web and ejb) profile support
     ---------------------------------------------------------------
@@ -302,4 +302,4 @@ command.testExecuteAppClient= \
 	-agentlib:jdwp=transport=dt_socket,address=5556,server=y,suspend=y \
 	.
 	.
-        -Ddeliverable.class=${deliverable.class} -javaagent:${javaee.home}/modules/gf-client.jar=arg=-configxml,arg=${ts.home}/tmp/appclient/s1as.sun-acc.xml,client=jar=$testExecuteArgs
+        -Ddeliverable.class=${deliverable.class} -javaagent:${jakartaee.home}/modules/gf-client.jar=arg=-configxml,arg=${ts.home}/tmp/appclient/s1as.sun-acc.xml,client=jar=$testExecuteArgs

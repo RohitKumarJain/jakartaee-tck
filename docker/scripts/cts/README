@@ -32,14 +32,14 @@ it accepts as environment variables. Here are sample docker run commands -
 1. Run the image to download the Jakarta EE CTS bundle from an internal location
    docker run --env http_proxy=http://<host>:<port> 
     --env  https_proxy=https://<host>:<port>
-    --env IP_MAILSERVER=172.17.0.2 --env test_suite=samples javaeects
+    --env IP_MAILSERVER=172.17.0.2 --env test_suite=samples jakartaeects
 
 2. Run the test suite by supplying the CTS bundle as an environment variable 
    from the command line 
    docker run --env http_proxy=http://<host>:<port> 
     --env  https_proxy=https://<host>:<port>
     --env CTS_BUNDLE_URL=http://<host>/jakartaeetck_latest.zip
-    --env IP_MAILSERVER=172.17.0.2 --env test_suite=samples javaeects
+    --env IP_MAILSERVER=172.17.0.2 --env test_suite=samples jakartaeects
 
 3. Run the test suite by supplying the CTS bundle as well as GlassFish bundle,
  as environment variables from the command line 
@@ -47,7 +47,7 @@ it accepts as environment variables. Here are sample docker run commands -
     --env  https_proxy=https://<host>:<port>
     --env GLASSFISH_BUNDLE_URL=http://<host>/glassfish.zip
     --env CTS_BUNDLE_URL=http://<host>/jakartaeetck_latest.zip
-    --env IP_MAILSERVER=172.17.0.2 --env test_suite=samples javaeects
+    --env IP_MAILSERVER=172.17.0.2 --env test_suite=samples jakartaeects
 
 The value accepted for test_suite is the name of the directory or 
 sub directories under src/com/sun/ts/tests. You can supply comma separated 
@@ -56,7 +56,7 @@ multiple test suites. For example,
 docker run --env http_proxy=http://<host>:<port> 
   --env  https_proxy=https://<host>:<port> 
   --env IP_MAILSERVER=172.17.0.2 
-  --env test_suite="samples el/api/jakarta_el/arrayelresolver" javaeects
+  --env test_suite="samples el/api/jakarta_el/arrayelresolver" jakartaeects
 
 As specified in the docker command line options for run command, you can 
 include all the --env arguments as property-value in a .properties file 

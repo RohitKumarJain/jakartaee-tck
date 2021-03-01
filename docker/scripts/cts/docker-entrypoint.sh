@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -146,10 +146,10 @@ sed -i 's/ri.admin.passwd=.*/ri.admin.passwd=adminadmin/g' ts.jte
 sed -i 's/jdbc.maxpoolsize=.*/jdbc.maxpoolsize=30/g' ts.jte
 sed -i 's/jdbc.steadypoolsize=.*/jdbc.steadypoolsize=5/g' ts.jte
 
-sed -i "s#javaee.home=.*#javaee.home=$CTS_HOME/vi/glassfish6/glassfish#g" ts.jte
+sed -i "s#jakartaee.home=.*#jakartaee.home=$CTS_HOME/vi/glassfish6/glassfish#g" ts.jte
 sed -i 's/orb.host=.*/orb.host=localhost/g' ts.jte
 
-sed -i "s#javaee.home.ri=.*#javaee.home.ri=$CTS_HOME/ri/glassfish6/glassfish#g" ts.jte
+sed -i "s#jakartaee.home.ri=.*#jakartaee.home.ri=$CTS_HOME/ri/glassfish6/glassfish#g" ts.jte
 sed -i 's/orb.host.ri=.*/orb.host.ri=localhost/g' ts.jte
 
 sed -i 's/ri.admin.port=.*/ri.admin.port=5858/g' ts.jte

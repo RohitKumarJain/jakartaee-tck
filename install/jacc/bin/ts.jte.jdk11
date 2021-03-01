@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -452,11 +452,11 @@ build.level=2
 #    com.sun.ts.lib.porting.TSHttpsURLConnectionInterface
 ###############################################################
 porting.ts.url.class.1=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.HttpsURLConnection.class.1=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 ##Porting class names for Sun RI Java EE Implementation #2 (must be Sun's RI)
 porting.ts.url.class.2=com.sun.ts.lib.implementation.sun.common.SunRIURL
-porting.ts.HttpsURLConnection.class.2=com.sun.ts.lib.implementation.sun.javaee.SunRIHttpsURLConnection
+porting.ts.HttpsURLConnection.class.2=com.sun.ts.lib.implementation.sun.jakartaee.SunRIHttpsURLConnection
 
 
 ###############################################################
@@ -494,7 +494,7 @@ tslib.name=jacctck
 
 ########################################################################
 ## Level of Vendor Java EE Implementation
-# @javaee.level The level of Java EE support for the implementation
+# @jakartaee.level The level of Java EE support for the implementation
 #               test.  This level is used to determine Java EE support
 #               when deploying archives - whether ears are supported,
 #               etc.  Currently 2 values are supported:
@@ -502,7 +502,7 @@ tslib.name=jacctck
 #               full - for full Java EE Platform support
 #               web  - for Java EE Web Profile [plus optional tech.]
 ########################################################################
-javaee.level=web
+jakartaee.level=web
 
 
 ####################################################################

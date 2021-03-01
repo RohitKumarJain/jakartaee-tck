@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 #
-# Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License v. 2.0, which is available at
@@ -42,7 +42,7 @@ cd $TS_HOME/bin
 ant config.vi
 
 #if [ $PROFILE == "web" ];then
-#  export ANT_OPTS="-Dkeywords=javaee_web_profile $ANT_OPTS"
+#  export ANT_OPTS="-Dkeywords=jakartaee_web_profile $ANT_OPTS"
 #fi
 
 cd $TS_HOME/src/com/sun/ts/tests
